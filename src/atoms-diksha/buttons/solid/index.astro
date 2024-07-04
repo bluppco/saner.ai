@@ -1,0 +1,11 @@
+---
+const { color } = Astro.props;
+---
+
+<button
+  class="flex px-4 py-2 justify-center bg-color-secondary rounded-lg transition ease-in-out hover:bg-white hover:border-2 border-color-primary text-white hover:text-color-primary"
+>
+  <p class="font-poppins font-semibold text-sm">
+    <slot />
+  </p>
+</button>
