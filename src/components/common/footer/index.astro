@@ -1,11 +1,82 @@
 ---
 
+// IMPORT ASTRO ATOMS
+import HeadingFive from "@/atoms/atoms-nandini/headings/five/index.astro"
+import ListItemWhite from "@/atoms/atoms-nandini/list-items/white/index.astro"
+
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    title1,
+    title2,
+    title3,
+    title4,
+    title1_desc1,
+    title1_desc2,
+    title1_desc3,
+    title1_desc4,
+    title2_desc1,
+    title2_desc2,
+    title2_desc3,
+    title3_desc1,
+    title3_desc2,
+    title3_desc3,
+    title3_desc4,
+    title3_desc5,
+    title3_desc6,
+    title3_desc7,
+    title4_desc1,
+    title4_desc2,
+
+} = Astro.props
 
 ---
 <footer class="bg-black py-20">
     <Container>
-        <p class="text-white">I am footer</p>
+        <div class="lg:flex justify-between lg:justify-evenly cursor-pointer space-y-8 lg:space-y-0">
+            <div class="flex justify-between lg:flex-none gap-40">
+                <div>
+                    <HeadingFive>{ title1 }</HeadingFive>
+                    <ul class="space-y-4 text-base text-gray-300 pt-5">
+                        <li><ListItemWhite>{ title1_desc1 }</ListItemWhite></li>
+                        <li><ListItemWhite>{ title1_desc2 }</ListItemWhite></li>
+                        <li><ListItemWhite>{ title1_desc3 }</ListItemWhite></li>
+                        <li><ListItemWhite>{ title1_desc4 }</ListItemWhite></li>
+                    </ul>
+                </div>
+                <div>
+                    <HeadingFive>{ title2 }</HeadingFive>
+                    <ul class="space-y-4 text-base text-gray-300 pt-5">
+                        <li><ListItemWhite>{ title2_desc1 }</ListItemWhite></li>
+                        <li><ListItemWhite>{ title2_desc2 }</ListItemWhite></li>
+                        <li><ListItemWhite>{ title2_desc3 }</ListItemWhite></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="md:flex md:justify-between lg:flex-none lg:gap-40">
+                <div>
+                    <HeadingFive>{ title3 }</HeadingFive>
+                    <ul class="space-y-4 text-base text-gray-300 pt-5">
+                        <li><ListItemWhite>{ title3_desc1 }</ListItemWhite></li>
+                        <li><ListItemWhite>{ title3_desc2 }</ListItemWhite></li>
+                        <li><ListItemWhite>{ title3_desc3 }</ListItemWhite></li>
+                        <li><ListItemWhite>{ title3_desc4 }</ListItemWhite></li>
+                        <li><ListItemWhite>{ title3_desc5 }</ListItemWhite></li>
+                        <li><ListItemWhite>{ title3_desc6 }</ListItemWhite></li>
+                        <li><ListItemWhite>{ title3_desc7 }</ListItemWhite></li>
+                    </ul>
+                </div>
+                <div>
+                    <HeadingFive>{ title4 }</HeadingFive>
+                    <ul class="space-y-4 text-base text-gray-300 pt-5">
+                        <li><ListItemWhite>{ title4_desc1 }</ListItemWhite></li>
+                        <li><ListItemWhite>{ title4_desc2 }</ListItemWhite></li>
+                    </ul>
+                </div>
+            </div> 
+        </div>
     </Container>
 </footer>
