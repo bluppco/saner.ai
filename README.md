@@ -1,12 +1,20 @@
 # SANER.AI
 
+### Anchortags
+- One :  absolute, top-4, left-6, text-white, text-center, py-3, font-semibold, font-poppins, text-xs, tracking-wider, bg-gray-800, rounded-full, h-10, w-12
+- two :  absolute, top-4, left-6, text-white, text-center, py-3, font-semibold, font-poppins, text-xs, tracking-wider, bg-gray-800, rounded-full, h-10, w-20
+
 ### Headings
 
 - Two :  font-poppins, text-5xl, px-20, md:text-7xl, font-medium
+- four : text-center, text-4xl, font-medium, font-poppins, py-14, tracking-wide
+- fourXL : font-medium text-xl font-poppins
 - five : text-neutral-400, tracking-wide, font-poppins
 
 ### Paragraphs
 
+- base : text-base
+- medium : font-medium
 - large : text-gray-300, text-base, md:text-lg, font-poppins
 - XS : text-xs, font-medium
 

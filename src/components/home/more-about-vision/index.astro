@@ -1,0 +1,169 @@
+---
+
+// IMPORT ASTRO ATOMS
+import AnchorTagCard1 from "@/atoms/atoms-nandini/anchor/one/index.astro" 
+import AnchorTagCard2 from "@/atoms/atoms-nandini/anchor/two/index.astro"
+import HeadingFour from "@/atoms/atoms-nandini/headings/four/index.astro"
+import HeadingFourXL from "@/atoms/atoms-nandini/headings/four/XL/index.astro"
+import ParagraphBase from "@/atoms/atoms-nandini/paragraphs/base/index.astro"
+import ParagraphMedium from "@/atoms/atoms-nandini/paragraphs/medium/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    card1_desc1,
+    card2_desc1,
+    card3_desc1,
+    card1_heading1,
+    card2_heading1,
+    card3_heading1,
+    card1_title,
+    card2_title,
+    card3_title,
+    desc1,
+    icon1_desc1,
+    icon1_desc2,
+    icon2_desc1,
+    icon2_desc2,
+    icon3_desc1,
+    icon3_desc2,
+    icon4_desc1,
+    icon4_desc2,
+    title,
+
+} = Astro.props
+
+---
+<div class="mx-5 my-5">
+    <HeadingFour>{ title }</HeadingFour>
+    <div class="cursor-pointer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:flex lg:justify-center pb-20 mx-8">
+        <!-- Card-1 -->
+        <div class="col-span-1 max-w-md bg-white border rounded-2xl transition delay-200 hover:scale-105 duration-500 hover:text-purple-500">
+            <div class="relative">
+                <img  
+                    alt="" 
+                    class="rounded-t-2xl"
+                    src="/card_img1.webp"
+                >
+                <AnchorTagCard1>{ card1_heading1 }</AnchorTagCard1>
+            </div>
+            <div class="inline-flex p-7 text-xs space-x-3 text-black">
+                <p>{ desc1 }</p>
+                <p>⏺</p>
+                <p>{ card1_desc1 }</p>
+            </div>
+            <div class="pb-40 px-7">
+                <HeadingFourXL>{ card1_title }</HeadingFourXL>
+            </div> 
+        </div>
+        <!-- Card-2 -->
+        <div class="col-span-1 max-w-md bg-white border rounded-2xl transition delay-200 hover:scale-105 duration-500 hover:text-purple-500">
+            <div class="relative">
+                <img  
+                    alt="" 
+                    class="rounded-t-2xl"
+                    src="/card_img2.webp"
+                >
+                <AnchorTagCard2>{ card2_heading1 }</AnchorTagCard2>
+            </div>
+            <div class="inline-flex p-7 text-xs space-x-3 text-black">
+                <p>{ desc1 }</p>
+                <p>⏺</p>
+                <p>{ card2_desc1 }</p>
+            </div>
+            <div class="pb-40 px-7">
+                <HeadingFourXL>{ card2_title }</HeadingFourXL>
+            </div> 
+        </div>
+        <!-- Card-3 -->
+        <div class="col-span-1 md:col-span-2 lg:col-span-1 max-w-md bg-white border rounded-2xl transition delay-200 hover:scale-105 duration-500 hover:text-purple-500">
+            <div class="relative">
+                <img 
+                    alt="" 
+                    class="rounded-t-2xl"
+                    src="/card_img3.png" 
+                >
+                <AnchorTagCard2>{ card3_heading1 }</AnchorTagCard2>
+            </div>
+            <div class="inline-flex p-7 text-xs space-x-3 text-black">
+                <p>{ desc1 }</p>
+                <p>⏺</p>
+                <p>{ card3_desc1 }</p>
+            </div>
+            <div class="pb-40 px-7">
+                <HeadingFourXL>{ card3_title }</HeadingFourXL>
+            </div> 
+        </div>
+    </div>
+    <!-- Icons -->
+    <div class="cursor-pointer flex-wrap md:flex gap-16 justify-center text-center space-y-6 md:space-y-0 pb-32 mx-8">
+        <div class="flex justify-between space-x-8">
+            <div class="space-y-2">
+                <div>
+                    <img  
+                        alt="ChromeExtension" 
+                        class="mx-10 h-20 w-20 transition delay-200 hover:scale-110 duration-500"
+                        src="/chrome_icon.svg"
+                    >
+                </div>
+                <ParagraphMedium>{ icon1_desc1 }</ParagraphMedium>
+                <ParagraphBase>{ icon1_desc2 }</ParagraphBase>
+            </div>
+            <div class="space-y-2">
+                <div class="mx-10 h-20 w-20">
+                    <img 
+                        alt="Discordicon"
+                        class="h-20 w-20 transition delay-200 hover:scale-110 duration-500"
+                        src="/discord_icon.svg" 
+                    >
+                </div>
+                <ParagraphMedium>{ icon2_desc1 }</ParagraphMedium>
+                <ParagraphBase>{ icon2_desc2 }</ParagraphBase>
+            </div>
+        </div>
+        <div class="flex justify-between space-x-8">
+            <div class="space-y-2">
+                <div class="mx-10 h-20 w-20">
+                    <img 
+                        alt="twittericon"
+                        class="h-20 w-20 transition delay-200 hover:scale-110 duration-500"
+                        src="/twitter_icon.svg" 
+                    >
+                </div>
+                <ParagraphMedium>{ icon3_desc1 }</ParagraphMedium>
+                <ParagraphBase>{ icon3_desc2 }</ParagraphBase>
+            </div>
+            <div class="space-y-2">
+                <div class="mx-10 h-20 w-20">
+                    <img 
+                        alt="ProductHunt"
+                        class="h-20 w-20 transition delay-200 hover:scale-110 duration-500"
+                        src="/product_hunt_icon.svg" 
+                    >
+                </div>
+                <ParagraphMedium>{ icon4_desc1 }</ParagraphMedium>
+                <ParagraphBase>{ icon4_desc2 }</ParagraphBase>
+            </div>
+        </div>
+    </div>
+    <div class="flex space-x-5 justify-center">
+        <div class="h-16 w-52">
+            <img 
+                alt=""
+                src="/Product-of-the-day.svg" 
+            >
+        </div>
+        <div class="h-16 w-52 hidden md:block">
+            <img 
+                alt=""
+                src="/productivity.svg"
+            >
+        </div>
+        <div class="h-16 w-52 hidden md:block">
+            <img  
+                alt=""
+                src="/ai-for-that.webp"
+            >
+        </div>
+    </div>
+</div>
