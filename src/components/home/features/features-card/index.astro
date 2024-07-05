@@ -1,0 +1,25 @@
+---
+
+// GET ASTRO PROPS
+const {
+
+    title,
+    sub_title,
+    source,
+
+} = Astro.props
+
+---
+
+
+<div class="p-6 flex flex-col gap-2 rounded-xl bg-slate-100 hover:scale-105 hover:shadow-xl duration-200 ease-in-out">
+    <div class="size-10">
+        <img
+            alt=""
+            class=""
+            src={ source }
+        />
+    </div>
+    <h4 class="text-lg font-medium font-poppins">{ title }</h4>
+    <p class="text-sm font-poppins">{ sub_title }</p>
+</div>
