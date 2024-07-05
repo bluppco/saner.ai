@@ -5,7 +5,7 @@
 -Headings
 -Font-poppins (for body elements)
 -Paragraphs
-p (for nav elements): font-poppins size-sm medium color-primary
+• p (for nav elements): font-poppins size-sm medium color-primary
 
 ### Buttons
 
@@ -15,10 +15,16 @@ p (for nav elements): font-poppins size-sm medium color-primary
 ### Tailwind Config
 
 -Colors
-primary: #343C57
-secondary: #FE890F
-bg: #FEFDFC
+• primary: #343C57
+• secondary: #FE890F
+• bg: #FEFDFC
 
 ### Imports
 
 -material icons
+
+---
+
+---
+
+Altered custom.css to inclue scrolling animation
