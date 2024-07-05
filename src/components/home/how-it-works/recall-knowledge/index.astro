@@ -1,0 +1,34 @@
+---
+
+// IMPORT ASTRO ATOMS
+import HeadingThree from "@/atoms/atoms-shiva/headings/three/index.astro"
+import HeadingTwo from "@/atoms/atoms-shiva/headings/two/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    image_source,
+    subtitle_one,
+    subtitle_two,
+    title,
+
+} = Astro.props
+
+---
+
+<div class="flex flex-col gap-6">
+    <div>
+        <HeadingTwo>{ title }</HeadingTwo>
+    </div>
+    <div>
+        <HeadingThree>{ subtitle_one }</HeadingThree>
+        <HeadingThree>{ subtitle_two }</HeadingThree>
+    </div>
+    <div class="">
+        <img
+            alt="recall"
+            class=""
+            src={ image_source }
+        />
+    </div>
+</div>
