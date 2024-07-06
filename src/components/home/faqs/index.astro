@@ -1,0 +1,31 @@
+---
+
+// IMPORT ASTRO ATOMS
+import HeadingTwo from "@/atoms/akash/heading/two/index.astro"
+
+// IMPORT ASTRO COLLECTION
+import { getCollection } from "astro:content";
+let faq_data = await getCollection("faqs");
+faq_data = faq_data.sort( ( a, b ) => a.data.order - b.data.order)
+
+// IMPORT TSX COMPONENT
+import Questions from "@/components/home/faqs/index";
+
+---
+
+<div class="w-full flex justify-center items-center">
+    <div class=" w-[80%] border-[1px] border-black border-opacity-35 flex flex-col justify-center items-center md:p-16 lg:p-16 p-4 rounded-3xl mb-10">
+        <div class="bg-voilet-bg flex justify-center items-center gap-1 p-4 rounded-lg w-fit">
+            <p class="text-blue-text font-sans font-extrabold text-[12px] tracking-wider">FAQ</p>
+            <p class="text-[6px]">⏺</p>
+            <p class="text-voilet-text font-sans font-bold text-[12px] tracking-wide" >Help Center</p>
+        </div>
+        <div class=" my-5" >
+            <HeadingTwo>
+                Have a question?
+            </HeadingTwo>
+        </div>
+
+         <Questions faq_data={ faq_data } client:load />
+    </div>
+</div>

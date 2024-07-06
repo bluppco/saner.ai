@@ -33,6 +33,9 @@ module.exports = {
 			},
 			colors: {
 				"bluish-gray": "#4A597C",
+				"voilet-bg": "#EADFEC",
+				"voilet-text": "#A571B5",
+				"blue-text": "#8D027C",
 			},
 			fontFamily: {
 				poppins: ["Poppins", "sans-serif"],
