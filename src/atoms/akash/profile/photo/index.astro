@@ -1,0 +1,17 @@
+---
+
+// IMPORT ASTRO ATOMS
+import Picture from "@/atoms/picture/internal/contain/index.astro"
+
+// ASTRO PROPS
+const {
+    source,
+    alternative_text
+} = Astro.props
+
+---
+
+<div class="w-10 aspect-square rounded-3xl overflow-hidden" >  
+    <Picture source={ source } alternative_text= { alternative_text } ></Picture>
+</div>
+    
