@@ -36,6 +36,7 @@ module.exports = {
           primary: "#343C57",
           secondary: "#FE890F",
           bg: "#FEFDFC",
+          accent: "#FEBEAC",
         },
       },
       fontFamily: {
