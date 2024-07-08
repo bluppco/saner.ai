@@ -1,78 +1,78 @@
 ---
 // IMPORTS ATOMS
-import BorderedButton from "@/atoms-diksha/buttons/bordered/index.astro";
-import NavItem from "@/atoms-diksha/paragraphs/p-nav/index.astro";
-import SolidButton from "@/atoms-diksha/buttons/solid/index.astro";
+import BorderedButton from '@/atoms-diksha/buttons/bordered/index.astro';
+import NavItem from '@/atoms-diksha/paragraphs/p-nav/index.astro';
+import SolidButton from '@/atoms-diksha/buttons/solid/index.astro';
 
 const typicalUsers = [
-  "Entrepreneurs",
-  "Managers",
-  "Researchers",
-  "Content Creators",
-  "Students",
+	'Entrepreneurs',
+	'Managers',
+	'Researchers',
+	'Content Creators',
+	'Students',
 ];
 
-const resources = ["Introduction & guides", "General Blogs", "Video Academy"];
+const resources = ['Introduction & guides', 'General Blogs', 'Video Academy'];
 ---
 
 <header
-  class="sticky top-0 z-10 flex justify-between items-center py-2 px-16 sm:px-8 bg-color-bg"
+	class="sticky top-0 z-10 flex justify-between items-center py-2 px-16 sm:px-8 bg-color-bg"
 >
-  <h3 class="font-poppins font-bold text-2xl text-color-primary">Saner.AI</h3>
-  <button class="material-symbols-outlined font-light block sm:hidden"
-    >menu</button
-  >
-  <nav class="hidden sm:flex gap-8">
-    <NavItem>Home</NavItem>
-    <div class="flex">
-      <NavItem> Typical Users </NavItem><div class="group relative">
-        <button
-          class="material-symbols-outlined font-light text-color-primary cursor-pointer"
-          >keyboard_arrow_down</button
-        >
-        <div
-          class="absolute top-10 -left-24 w-56 flex-col gap-4 bg-white rounded-b py-4 px-2 justify-around hidden group-hover:flex"
-        >
-          {
-            typicalUsers.map((user) => (
-              <a
-                href="$"
-                class="font-poppins text-sm font-medium whitespace-nowrap"
-              >
-                {user}
-              </a>
-            ))
-          }
-        </div>
-      </div>
-    </div>
-    <NavItem>Pricing</NavItem>
-    <div class="flex">
-      <NavItem> Resources </NavItem>
-      <div class="group relative">
-        <button
-          class="material-symbols-outlined font-light text-color-primary cursor-pointer"
-          >keyboard_arrow_down</button
-        >
-        <div
-          class="absolute top-10 -left-24 w-56 flex-col gap-4 bg-white rounded-b py-4 px-2 justify-around hidden group-hover:flex"
-        >
-          {
-            resources.map((user) => (
-              <a
-                href="$"
-                class="font-poppins text-sm font-medium whitespace-nowrap"
-              >
-                {user}
-              </a>
-            ))
-          }
-        </div>
-      </div>
-    </div>
-  </nav>
-  <div class="sm:flex gap-1 hidden">
-    <BorderedButton>Sign in</BorderedButton>
-    <SolidButton>Sign Up</SolidButton>
-  </div>
+	<h3 class="font-poppins font-bold text-2xl text-color-primary">Saner.AI</h3>
+	<button class="material-symbols-outlined font-light block sm:hidden"
+		>menu</button
+	>
+	<nav class="hidden sm:flex gap-8">
+		<NavItem>Home</NavItem>
+		<div class="flex">
+			<NavItem> Typical Users </NavItem><div class="group relative">
+				<button
+					class="material-symbols-outlined font-light text-color-primary cursor-pointer"
+					>keyboard_arrow_down</button
+				>
+				<div
+					class="absolute top-10 -left-24 w-56 flex-col gap-4 bg-white rounded-b py-4 px-2 justify-around hidden group-hover:flex"
+				>
+					{
+						typicalUsers.map((user) => (
+							<a
+								href="$"
+								class="font-poppins text-sm font-medium whitespace-nowrap"
+							>
+								{user}
+							</a>
+						))
+					}
+				</div>
+			</div>
+		</div>
+		<NavItem>Pricing</NavItem>
+		<div class="flex">
+			<NavItem> Resources </NavItem>
+			<div class="group relative">
+				<button
+					class="material-symbols-outlined font-light text-color-primary cursor-pointer"
+					>keyboard_arrow_down</button
+				>
+				<div
+					class="absolute top-10 -left-24 w-56 flex-col gap-4 bg-white rounded-b py-4 px-2 justify-around hidden group-hover:flex"
+				>
+					{
+						resources.map((user) => (
+							<a
+								href="$"
+								class="font-poppins text-sm font-medium whitespace-nowrap"
+							>
+								{user}
+							</a>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="sm:flex gap-1 hidden">
+		<BorderedButton>Sign in</BorderedButton>
+		<SolidButton>Sign Up</SolidButton>
+	</div>
 </header>

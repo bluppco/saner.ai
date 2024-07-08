@@ -1,28 +1,36 @@
 ---
 const profession = [
-  "Researchers",
-  "Managers",
-  "Content creators",
-  "Entrepreneurs",
-  "ADHD Coach",
+	'Researchers',
+	'Managers',
+	'Content creators',
+	'Entrepreneurs',
+	'ADHD Coach',
 ];
 ---
 
 <section class="py-40">
-  <div
-    class="flex flex-col sm:flex-row justify-around items-center gap-20 sm:gap-0"
-  >
-    <h3 class="font-poppins font-medium text-xl text-center">
-      +7000 top professionals moved to Saner.ai<br />
-      What about you?
-    </h3>
+	<div
+		class="flex flex-col sm:flex-row justify-around items-center gap-20 sm:gap-0"
+	>
+		<h3 class="font-poppins font-medium text-xl text-center">
+			+7000 top professionals moved to Saner.ai<br />
+			What about you?
+		</h3>
 
-    <div class="overflow-hidden whitespace-nowrap relative w-full sm:w-2/5">
-      <div class="flex items-center gap-40 sm:gap-10 animate-scroll">
-        {profession.map((item) => <h4 class="font-poppins ">{item}</h4>)}
-        <!-- Repeat the list to ensure continuous scrolling -->
-        {profession.map((item) => <h4 class="font-poppins ">{item}</h4>)}
-      </div>
-    </div>
-  </div>
+		<div class="overflow-hidden whitespace-nowrap relative w-full sm:w-2/5">
+			<div class="flex items-center gap-40 sm:gap-10 animate-scroll">
+				{
+					profession.map((item) => (
+						<h4 class="font-poppins ">{item}</h4>
+					))
+				}
+				<!-- Repeat the list to ensure continuous scrolling -->
+				{
+					profession.map((item) => (
+						<h4 class="font-poppins ">{item}</h4>
+					))
+				}
+			</div>
+		</div>
+	</div>
 </section>
