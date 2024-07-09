@@ -1,8 +1,8 @@
 ---
 
 // IMPORT ASTRO ATOMS
-import HeadingThree from "@/atoms/atoms-shiva/headings/three/index.astro"
-import HeadingTwo from "@/atoms/atoms-shiva/headings/two/index.astro"
+import HeadingThreeCenter from "@/atoms/atoms-shiva/headings/three/center/index.astro"
+import HeadingTwoCenter from "@/atoms/atoms-shiva/headings/two/center/index.astro"
 
 // IMPORT ASTRO COMPONENTS
 import Navigation from "@/components/home/how-it-works/navigation/index.astro"
@@ -25,12 +25,10 @@ const {
 ---
 
 <div class="flex flex-col gap-6">
+    <HeadingTwoCenter>{ title }</HeadingTwoCenter>
     <div>
-        <HeadingTwo>{ title }</HeadingTwo>
-    </div>
-    <div>
-        <HeadingThree>{ subtitle_one }</HeadingThree>
-        <HeadingThree>{ subtitle_two }</HeadingThree>
+        <HeadingThreeCenter>{ subtitle_one }</HeadingThreeCenter>
+        <HeadingThreeCenter>{ subtitle_two }</HeadingThreeCenter>
     </div>
     <nav class="fourth-section-nav flex flex-col items-center justify-center md:flex-row gap-4">
         <div class="flex-1" data-image-index="1">
@@ -47,21 +45,21 @@ const {
         <div class="fourth-section-content rounded-3xl hidden">
             <img 
                 alt="" 
-                class="rounded-3xl" 
+                class="object-cover w-full h-full" 
                 src={ image_source_one } 
             />
         </div>
         <div class="fourth-section-content rounded-3xl hidden">
             <img 
                 alt="" 
-                class="rounded-3xl" 
+                class="object-cover w-full h-full" 
                 src={ image_source_two } 
             />
         </div>
         <div class="fourth-section-content rounded-3xl hidden">
             <img 
                 alt="" 
-                class="rounded-3xl" 
+                class="object-cover w-full h-full" 
                 src={ image_source_three} 
             />
         </div>
