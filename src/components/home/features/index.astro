@@ -8,6 +8,7 @@ import FeaturesCard from "@/components/home/features/features-card/index.astro"
 import FeaturesExtraCard from "@/components/home/features/features-extra-card/index.astro"
 
 // IMPORT ASTRO ATOMS
+import HeadingFourCenter from "@/atoms/atoms-shiva/headings/four/threexl/center/index.astro"
 import HeadingThree from "@/atoms/atoms-shiva/headings/three/index.astro"
 import HeadingTwo from "@/atoms/atoms-shiva/headings/two/index.astro"
 
@@ -25,6 +26,25 @@ const data = {
     sub_title: "Easily become organized without getting bogged down with manual nitty-gritty",
 
 }
+const featuredata = [
+
+    {   
+        source: "/images/inbox.jpg",
+        sub_title:"Display your new notes to get things done",
+        title: "Smart Inbox",
+    },
+    {   
+        source: "/images/tag.svg",
+        sub_title:"Suggest tags based on note’s content & previous tags",
+        title: "Tag Suggestion",
+    },
+    {   
+        source: "/images/note.png",
+        sub_title:"Easily connect with similar knowledge in the past",
+        title: "Similar Note",
+    },
+
+]
 
 ---
 
@@ -32,32 +52,21 @@ const data = {
     <Container>
         <div class="max-w-[1140px] w-full mx-auto flex flex-col gap-10 px-16">
             <div class="flex flex-col gap-6">
-                <div>
-                    <HeadingTwo>{ data.title }</HeadingTwo>
-                </div>
-                <div>
-                    <HeadingThree>{ data.sub_title }</HeadingThree>
-                </div>
+                <HeadingTwo>{ data.title }</HeadingTwo>
+                <HeadingThree>{ data.sub_title }</HeadingThree>
                 <div class="grid grid-row md:grid-cols-3 items-center justify-center gap-4">
-                    <FeaturesCard
-                        source="/images/inbox.jpg"
-                        sub_title="Display your new notes to get things done"
-                        title="Smart Inbox"
-                    />
-                    <FeaturesCard
-                        source="/images/tag.svg"
-                        sub_title="Suggest tags based on note’s content & previous tags"
-                        title="Tag Suggestion"
-                    />
-                    <FeaturesCard
-                        source="/images/note.png"
-                        sub_title="Easily connect with similar knowledge in the past "
-                        title="Similar Note"
-                    />
+                    {featuredata.map((feature, index) =>(
+                        <FeaturesCard
+                            key={ index }
+                            source={ feature.source }
+                            sub_title={ feature.sub_title }
+                            title={ feature.title }
+                        />
+                    ))}
                 </div>
             </div>
             <div class="flex flex-col gap-8">
-                <h4 class="text-xl md:text-3xl font-poppins font-medium text-center">{ data.title_two }</h4>
+                <HeadingFourCenter>{ data.title_two }</HeadingFourCenter>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                     <FeaturesExtraCard title="Hierarchical folders">
                         <Folder size={30} />
