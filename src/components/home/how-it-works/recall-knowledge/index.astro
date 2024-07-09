@@ -1,8 +1,8 @@
 ---
 
 // IMPORT ASTRO ATOMS
-import HeadingThree from "@/atoms/atoms-shiva/headings/three/index.astro"
-import HeadingTwo from "@/atoms/atoms-shiva/headings/two/index.astro"
+import HeadingThreeCenter from "@/atoms/atoms-shiva/headings/three/center/index.astro"
+import HeadingTwoCenter from "@/atoms/atoms-shiva/headings/two/center/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -17,18 +17,14 @@ const {
 ---
 
 <div class="flex flex-col gap-6">
+    <HeadingTwoCenter>{ title }</HeadingTwoCenter>
     <div>
-        <HeadingTwo>{ title }</HeadingTwo>
+        <HeadingThreeCenter>{ subtitle_one }</HeadingThreeCenter>
+        <HeadingThreeCenter>{ subtitle_two }</HeadingThreeCenter>
     </div>
-    <div>
-        <HeadingThree>{ subtitle_one }</HeadingThree>
-        <HeadingThree>{ subtitle_two }</HeadingThree>
-    </div>
-    <div class="">
-        <img
-            alt="recall"
-            class=""
-            src={ image_source }
-        />
-    </div>
+    <img
+        alt="recall"
+        class="object-cover w-full h-full"
+        src={ image_source }
+    />
 </div>
