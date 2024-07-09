@@ -3,12 +3,22 @@
 // IMPORT ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
+// IMPORT ASTRO ATOMS
+import HeadingOne from "@/atoms/atoms-shiva/headings/one/two-xl/index.astro"
+
 // IMPORT ASTRO COMPONENTS
-import FirstSection from "@/components/home/how-it-works/first-section/index.astro"
-import SecondSection from "@/components/home/how-it-works/second-section/index.astro"
-import RecallKnowledge from "@/components/home/how-it-works/recall-knowledge/index.astro"
 import DoYourWork from "@/components/home/how-it-works/do-your-work/index.astro"
+import CaptureInformation from "@/components/home/how-it-works/capture-information/index.astro"
 import NeverLoseContext from "@/components/home/how-it-works/never-lose-context/index.astro"
+import RecallKnowledge from "@/components/home/how-it-works/recall-knowledge/index.astro"
+import FindAsk from "@/components/home/how-it-works/find-ask/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    title: "How it works ?",
+
+}
 
 ---
 
@@ -17,13 +27,13 @@ import NeverLoseContext from "@/components/home/how-it-works/never-lose-context/
         <div class="flex flex-col gap-14">
             <div class="flex items-center justify-center">
                 <div class="bg-orange-400 px-16 py-2 rounded-3xl">
-                    <h1 class="text-2xl font-bold text-white">How it works ?</h1>
+                    <HeadingOne>{ data.title }</HeadingOne>
                 </div>
             </div>
             <div class="max-w-[1140px] w-full mx-auto flex flex-col gap-40">
                 <!-- CAPTURE INFORMATION -->
                 <div>
-                    <FirstSection
+                    <CaptureInformation
                         category_one="Keyboard shortcut to note on chrome"
                         category_three="Import in minutes"
                         category_two="Talk & Jot on the go"
@@ -37,7 +47,7 @@ import NeverLoseContext from "@/components/home/how-it-works/never-lose-context/
                 </div>
                 <!-- FIND ASK AND BRAINSTORM EASILY -->
                 <div>
-                    <SecondSection
+                    <FindAsk
                         category_one="Just ask to get what you need"
                         category_three="Find any specific note"
                         category_two="Distill insights from selected files"
