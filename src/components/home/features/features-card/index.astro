@@ -1,25 +1,28 @@
 ---
 
+// IMPORT ASTRO ATOMS
+import HeadingFourLg from "@/atoms/atoms-shiva/headings/four/lg/index.astro"
+import ParagraphSmall from "@/atoms/atoms-shiva/paragraphs/sm/index.astro"
+
 // GET ASTRO PROPS
 const {
 
-    title,
-    sub_title,
     source,
+    sub_title,
+    title,
 
 } = Astro.props
 
 ---
 
-
 <div class="p-6 flex flex-col gap-2 rounded-xl bg-slate-100 hover:scale-105 hover:shadow-xl duration-200 ease-in-out">
     <div class="size-10">
         <img
             alt=""
-            class=""
+            class="object-cover h-full w-full"
             src={ source }
         />
     </div>
-    <h4 class="text-lg font-medium font-poppins">{ title }</h4>
-    <p class="text-sm font-poppins">{ sub_title }</p>
+    <HeadingFourLg>{ title }</HeadingFourLg>
+    <ParagraphSmall>{ sub_title }</ParagraphSmall>
 </div>
