@@ -1,12 +1,12 @@
 ---
 
+// IMPORT ASTRO COMPONENTS
+import ImageCard from "@/components/home/more-about-vision/image-card/index.astro"
+import SocialIcons from "@/components/home/more-about-vision/social-icon/index.astro"
+
 // IMPORT ASTRO ATOMS
-import AnchorTagCard1 from "@/atoms/atoms-nandini/anchor/one/index.astro" 
-import AnchorTagCard2 from "@/atoms/atoms-nandini/anchor/two/index.astro"
-import HeadingFour from "@/atoms/atoms-nandini/headings/four/index.astro"
-import HeadingFourXL from "@/atoms/atoms-nandini/headings/four/XL/index.astro"
-import ParagraphBase from "@/atoms/atoms-nandini/paragraphs/base/index.astro"
-import ParagraphMedium from "@/atoms/atoms-nandini/paragraphs/medium/index.astro"
+import HeadingFourCenter from "@/atoms/atoms-nandini/headings/four/center/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -34,137 +34,85 @@ const {
 } = Astro.props
 
 ---
-<div class="mx-5 my-5">
-    <HeadingFour>{ title }</HeadingFour>
+<div class="m-5">
+    <div class="gap-20">
+        <HeadingFourCenter>{ title }</HeadingFourCenter>
+    </div>
     <div class="cursor-pointer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:flex lg:justify-center pb-20 mx-8">
-        <!-- Card-1 -->
-        <div class="col-span-1 max-w-md bg-white border rounded-2xl transition delay-200 hover:scale-105 duration-500 hover:text-purple-500">
-            <div class="relative">
-                <img  
-                    alt="" 
-                    class="rounded-t-2xl"
-                    src="/card_img1.webp"
-                >
-                <AnchorTagCard1>{ card1_heading1 }</AnchorTagCard1>
-            </div>
-            <div class="inline-flex p-7 text-xs space-x-3 text-black">
-                <p>{ desc1 }</p>
-                <p>⏺</p>
-                <p>{ card1_desc1 }</p>
-            </div>
-            <div class="pb-40 px-7">
-                <HeadingFourXL>{ card1_title }</HeadingFourXL>
-            </div> 
-        </div>
-        <!-- Card-2 -->
-        <div class="col-span-1 max-w-md bg-white border rounded-2xl transition delay-200 hover:scale-105 duration-500 hover:text-purple-500">
-            <div class="relative">
-                <img  
-                    alt="" 
-                    class="rounded-t-2xl"
-                    src="/card_img2.webp"
-                >
-                <AnchorTagCard2>{ card2_heading1 }</AnchorTagCard2>
-            </div>
-            <div class="inline-flex p-7 text-xs space-x-3 text-black">
-                <p>{ desc1 }</p>
-                <p>⏺</p>
-                <p>{ card2_desc1 }</p>
-            </div>
-            <div class="pb-40 px-7">
-                <HeadingFourXL>{ card2_title }</HeadingFourXL>
-            </div> 
-        </div>
-        <!-- Card-3 -->
-        <div class="col-span-1 md:col-span-2 lg:col-span-1 max-w-md bg-white border rounded-2xl transition delay-200 hover:scale-105 duration-500 hover:text-purple-500">
-            <div class="relative">
-                <img 
-                    alt="" 
-                    class="rounded-t-2xl"
-                    src="/card_img3.png" 
-                >
-                <AnchorTagCard2>{ card3_heading1 }</AnchorTagCard2>
-            </div>
-            <div class="inline-flex p-7 text-xs space-x-3 text-black">
-                <p>{ desc1 }</p>
-                <p>⏺</p>
-                <p>{ card3_desc1 }</p>
-            </div>
-            <div class="pb-40 px-7">
-                <HeadingFourXL>{ card3_title }</HeadingFourXL>
-            </div> 
-        </div>
+        <ImageCard
+            alternative_text="Card-Image"
+            card_desc={ card1_desc1 }
+            card_heading={ card1_heading1 }
+            card_title={ card1_title }
+            desc={ desc1 }
+            source="/card_img1.webp"
+        />
+        <ImageCard
+            alternative_text="Card-Image"
+            card_desc={ card2_desc1 }
+            card_heading={ card2_heading1 }
+            card_title={ card2_title }
+            desc={ desc1 }
+            source="/card_img2.webp"
+        />
+        <ImageCard
+            alternative_text="Card-Image"
+            card_desc={ card3_desc1 }
+            card_heading={ card3_heading1 }
+            card_title={ card3_title }
+            desc={ desc1 }
+            source="/card_img3.png"
+        />
     </div>
     <!-- Icons -->
     <div class="cursor-pointer flex-wrap md:flex gap-16 justify-center text-center space-y-6 md:space-y-0 pb-32 mx-8">
         <div class="flex justify-between space-x-8">
-            <div class="space-y-2">
-                <div>
-                    <img  
-                        alt="ChromeExtension" 
-                        class="mx-10 h-20 w-20 transition delay-200 hover:scale-110 duration-500"
-                        src="/chrome_icon.svg"
-                    >
-                </div>
-                <ParagraphMedium>{ icon1_desc1 }</ParagraphMedium>
-                <ParagraphBase>{ icon1_desc2 }</ParagraphBase>
-            </div>
-            <div class="space-y-2">
-                <div class="mx-10 h-20 w-20">
-                    <img 
-                        alt="Discordicon"
-                        class="h-20 w-20 transition delay-200 hover:scale-110 duration-500"
-                        src="/discord_icon.svg" 
-                    >
-                </div>
-                <ParagraphMedium>{ icon2_desc1 }</ParagraphMedium>
-                <ParagraphBase>{ icon2_desc2 }</ParagraphBase>
-            </div>
+            <SocialIcons
+                alternative_text="ChromeExtension"
+                icon_desc1={ icon1_desc1 }
+                icon_desc2={ icon1_desc2 }
+                source="/chrome_icon.svg"
+            />
+            <SocialIcons
+                alternative_text="DiscordCommunity"
+                icon_desc1={ icon2_desc1 }
+                icon_desc2={ icon2_desc2 }
+                source="/discord_icon.svg"
+            />
         </div>
         <div class="flex justify-between space-x-8">
-            <div class="space-y-2">
-                <div class="mx-10 h-20 w-20">
-                    <img 
-                        alt="twittericon"
-                        class="h-20 w-20 transition delay-200 hover:scale-110 duration-500"
-                        src="/twitter_icon.svg" 
-                    >
-                </div>
-                <ParagraphMedium>{ icon3_desc1 }</ParagraphMedium>
-                <ParagraphBase>{ icon3_desc2 }</ParagraphBase>
-            </div>
-            <div class="space-y-2">
-                <div class="mx-10 h-20 w-20">
-                    <img 
-                        alt="ProductHunt"
-                        class="h-20 w-20 transition delay-200 hover:scale-110 duration-500"
-                        src="/product_hunt_icon.svg" 
-                    >
-                </div>
-                <ParagraphMedium>{ icon4_desc1 }</ParagraphMedium>
-                <ParagraphBase>{ icon4_desc2 }</ParagraphBase>
-            </div>
+            <SocialIcons
+                alternative_text="TwitterIcon"
+                icon_desc1={ icon3_desc1 }
+                icon_desc2={ icon3_desc2 }
+                source="/twitter_icon.svg"
+            />
+            <SocialIcons
+                alternative_text="ProductHuntLogo"
+                icon_desc1={ icon4_desc1 }
+                icon_desc2={ icon4_desc2 }
+                source="/product_hunt_icon.svg"
+            />
         </div>
     </div>
-    <div class="flex space-x-5 justify-center">
-        <div class="h-16 w-52">
-            <img 
-                alt=""
-                src="/Product-of-the-day.svg" 
-            >
+    <div class="flex justify-evenly">
+        <div class="h-12">
+            <PictureInternal
+                alternative_text="Productofday"
+                source="/Product-of-the-day.svg" 
+            />
         </div>
-        <div class="h-16 w-52 hidden md:block">
-            <img 
-                alt=""
-                src="/productivity.svg"
-            >
+        <div class="h-12 hidden md:block">
+            <PictureInternal
+                alternative_text="productivity"
+                source="/productivity.svg"
+            />
         </div>
-        <div class="h-16 w-52 hidden md:block">
-            <img  
-                alt=""
-                src="/ai-for-that.webp"
-            >
+        <div class="h-12 hidden md:block">
+            <PictureInternal
+                alternative_text="ai"
+                source="/ai-for-that.webp"
+            />
         </div>
     </div>
 </div>
-
