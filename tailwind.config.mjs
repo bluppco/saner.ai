@@ -46,7 +46,12 @@ module.exports = {
 
 			},
 			colors: {
-
+				"text-neutral-400",
+				"text-gray-300",
+				"bg-gray-800",
+				"hover:bg-teal-300",
+				"text-white",
+				"hover:text-black",
 
 			},
 			fontFamily: {
