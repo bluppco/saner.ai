@@ -1,0 +1,27 @@
+---
+
+// IMPORT ASTRO ATOMS
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+import ParagraphMedium from "@/atoms/atoms-nandini/paragraphs/medium/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    alternative_text,
+    icon_desc1,
+    icon_desc2,
+    source,
+
+} = Astro.props
+
+---
+<div class="space-y-2">
+    <div class="mx-10 h-20 w-20 transition delay-200 hover:scale-110 duration-500">
+        <PictureInternal
+            alternative_text={ alternative_text }
+            source={ source }
+        />
+    </div>
+    <ParagraphMedium>{ icon_desc1 }</ParagraphMedium>
+    <p>{ icon_desc2 }</p>
+</div>
