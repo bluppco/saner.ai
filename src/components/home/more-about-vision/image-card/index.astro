@@ -1,0 +1,44 @@
+---
+
+// IMPORT ASTRO ATOMS
+import HeadingFourXL from "@/atoms/atoms-nandini/headings/four/four-xl/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+import ParagraphGray from "@/atoms/atoms-nandini/paragraphs/gray/index.astro"
+import ParagraphXS from "@/atoms/atoms-nandini/paragraphs/xs/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    alternative_text,
+    card_desc,
+    card_heading,
+    card_title,
+    desc,
+    source,
+
+} = Astro.props
+
+---
+<div class="col-span-1 max-w-md bg-white border rounded-2xl transition delay-200 hover:scale-105 duration-500 hover:text-purple-500">
+    <div class="relative rounded-t-2xl overflow-hidden">
+        <div class="">
+            <PictureInternal
+                alternative_text={ alternative_text }
+                source={ source }
+            />
+        </div>
+        <a href="/category/general-blogs/adhd/">
+            <ParagraphGray>
+                { card_heading }
+            </ParagraphGray>    
+        </a>
+    </div>
+    <div class="inline-flex p-7 gap-3 text-black">
+        <ParagraphXS>{ desc }</ParagraphXS>
+        <ParagraphXS>⏺</ParagraphXS>
+        <ParagraphXS>{ card_desc }</ParagraphXS>
+    </div>
+    <div class="pb-40 px-7">
+        <HeadingFourXL>{ card_title }</HeadingFourXL>
+    </div> 
+</div>
