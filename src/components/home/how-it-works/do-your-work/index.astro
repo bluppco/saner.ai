@@ -1,8 +1,9 @@
 ---
 
 // IMPORT ASTRO ATOMS
-import HeadingThreeCenter from "@/atoms/atoms-shiva/headings/three/center/index.astro"
-import HeadingTwoCenter from "@/atoms/atoms-shiva/headings/two/center/index.astro"
+import HeadingThreeCenter from "@/atoms/atoms-shiva/headings/three/lg/center/index.astro"
+import HeadingTwoCenter from "@/atoms/atoms-shiva/headings/two/five-xl/center/index.astro"
+import PictureCover from "@/atoms/picture/internal/index.astro"
 
 // IMPORT ASTRO COMPONENTS
 import Navigation from "@/components/home/how-it-works/navigation/index.astro"
@@ -31,36 +32,27 @@ const {
         <HeadingThreeCenter>{ subtitle_two }</HeadingThreeCenter>
     </div>
     <nav class="fourth-section-nav flex flex-col items-center justify-center md:flex-row gap-4">
-        <div class="flex-1" data-image-index="1">
-            <Navigation>{ category_one }</Navigation>
-        </div>
-        <div class="flex-1" data-image-index="2">
-            <Navigation>{ category_two }</Navigation>
-        </div>
-        <div class="flex-1" data-image-index="3">
-            <Navigation>{ category_three }</Navigation>
-        </div>
+        <Navigation index="1">{ category_one }</Navigation>
+        <Navigation index="2">{ category_two }</Navigation>
+        <Navigation index="3">{ category_three }</Navigation>
     </nav>
     <div class="relative image-container-four">
-        <div class="fourth-section-content rounded-3xl hidden">
-            <img 
-                alt="" 
-                class="object-cover w-full h-full" 
-                src={ image_source_one } 
+        <div class="fourth-section-content rounded-3xl overflow-hidden hidden">
+            <PictureCover
+                alternative_text=""  
+                source={ image_source_one } 
             />
         </div>
-        <div class="fourth-section-content rounded-3xl hidden">
-            <img 
-                alt="" 
-                class="object-cover w-full h-full" 
-                src={ image_source_two } 
+        <div class="fourth-section-content rounded-3xl overflow-hidden hidden">
+            <PictureCover
+                alternative_text=""  
+                source={ image_source_two } 
             />
         </div>
-        <div class="fourth-section-content rounded-3xl hidden">
-            <img 
-                alt="" 
-                class="object-cover w-full h-full" 
-                src={ image_source_three} 
+        <div class="fourth-section-content rounded-3xl overflow-hidden hidden">
+            <PictureCover
+                alternative_text=""  
+                source={ image_source_three} 
             />
         </div>
     </div>

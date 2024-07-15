@@ -3,9 +3,16 @@
 // IMPORT ASTRO ATOMS
 import ParagraphXlCenter from "@/atoms/atoms-shiva/paragraphs/xl/center/index.astro"
 
+// GET ASTRO PROPS
+const {
+
+    index,
+
+} = Astro.props
+
 ---
 
-<div class="px-4 py-2 border border-gray-200 hover:shadow-md cursor-pointer rounded-xl">
+<div class="px-4 py-2 border border-gray-200 hover:shadow-md cursor-pointer rounded-xl flex-1" data-image-index={ index }>
     <ParagraphXlCenter>
         <slot/>
     </ParagraphXlCenter>

@@ -3,6 +3,7 @@
 // IMPORT ASTRO ATOMS
 import HeadingFourLg from "@/atoms/atoms-shiva/headings/four/lg/index.astro"
 import ParagraphSmall from "@/atoms/atoms-shiva/paragraphs/sm/index.astro"
+import PictureCover from "@/atoms/picture/internal/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -17,10 +18,9 @@ const {
 
 <div class="p-6 flex flex-col gap-2 rounded-xl bg-slate-100 hover:scale-105 hover:shadow-xl duration-200 ease-in-out">
     <div class="size-10">
-        <img
-            alt=""
-            class="object-cover h-full w-full"
-            src={ source }
+        <PictureCover
+            alternative_text=""
+            source={ source }
         />
     </div>
     <HeadingFourLg>{ title }</HeadingFourLg>

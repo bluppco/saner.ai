@@ -3,15 +3,15 @@
 // IMPORT ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
-// IMPORT ASTRO ATOMS
-import HeadingOne from "@/atoms/atoms-shiva/headings/one/two-xl/index.astro"
-
 // IMPORT ASTRO COMPONENTS
-import DoYourWork from "@/components/home/how-it-works/do-your-work/index.astro"
 import CaptureInformation from "@/components/home/how-it-works/capture-information/index.astro"
+import DoYourWork from "@/components/home/how-it-works/do-your-work/index.astro"
+import FindAsk from "@/components/home/how-it-works/find-ask/index.astro"
 import NeverLoseContext from "@/components/home/how-it-works/never-lose-context/index.astro"
 import RecallKnowledge from "@/components/home/how-it-works/recall-knowledge/index.astro"
-import FindAsk from "@/components/home/how-it-works/find-ask/index.astro"
+
+// IMPORT ASTRO ATOMS
+import HeadingOne from "@/atoms/atoms-shiva/headings/one/two-xl/white/index.astro"
 
 // HARDCODED DATA
 const data = {
@@ -30,70 +30,60 @@ const data = {
                     <HeadingOne>{ data.title }</HeadingOne>
                 </div>
             </div>
-            <div class="max-w-[1140px] w-full mx-auto flex flex-col gap-40">
+            <div class="flex flex-col gap-40">
                 <!-- CAPTURE INFORMATION -->
-                <div>
-                    <CaptureInformation
-                        category_one="Keyboard shortcut to note on chrome"
-                        category_three="Import in minutes"
-                        category_two="Talk & Jot on the go"
-                        image_source_one="/images/talk.png"
-                        image_source_two="/images/import-data.png"
-                        subtitle_one="Brain dump and save information with ease."
-                        subtitle_two="Say goodbye to the stress of finding how to store them"
-                        title="Capture information quickly"
-                        video_source="/videos/keyboard-shortcut.mp4"
-                    />
-                </div>
+                <CaptureInformation
+                    category_one="Keyboard shortcut to note on chrome"
+                    category_three="Import in minutes"
+                    category_two="Talk & Jot on the go"
+                    image_source_one="/images/talk.png"
+                    image_source_two="/images/import-data.png"
+                    subtitle_one="Brain dump and save information with ease."
+                    subtitle_two="Say goodbye to the stress of finding how to store them"
+                    title="Capture information quickly"
+                    video_source="/videos/keyboard-shortcut.mp4"
+                />
                 <!-- FIND ASK AND BRAINSTORM EASILY -->
-                <div>
-                    <FindAsk
-                        category_one="Just ask to get what you need"
-                        category_three="Find any specific note"
-                        category_two="Distill insights from selected files"
-                        image_source_one="/images/just-ask.png"
-                        image_source_three="/images/find-any.png"
-                        image_source_two="/images/distill-insights.png"
-                        section_name="section-1"
-                        subtitle_one="Save time, get accurate answers, gain insights in simple steps."
-                        subtitle_two="All made possible by your personal AI"
-                        title="Find, ask and brainstorm easily"
-                    />
-                </div>
+                <FindAsk
+                    category_one="Just ask to get what you need"
+                    category_three="Find any specific note"
+                    category_two="Distill insights from selected files"
+                    image_source_one="/images/just-ask.png"
+                    image_source_three="/images/find-any.png"
+                    image_source_two="/images/distill-insights.png"
+                    section_name="section-1"
+                    subtitle_one="Save time, get accurate answers, gain insights in simple steps."
+                    subtitle_two="All made possible by your personal AI"
+                    title="Find, ask and brainstorm easily"
+                />
                 <!-- RECALL KNOWLEDGE -->
-                <div>
-                    <RecallKnowledge
-                        image_source="/images/recall-knowledge-image.png"
-                        subtitle_one="Saner.ai automatically suggest related notes to what you're working on"
-                        subtitle_two="Goodbye 'out of sight, out of mind' - Goodbye duplication work"
-                        title="Recall knowledge you forgot"
-                    />
-                </div>
+                <RecallKnowledge
+                    image_source="/images/recall-knowledge-image.png"
+                    subtitle_one="Saner.ai automatically suggest related notes to what you're working on"
+                    subtitle_two="Goodbye 'out of sight, out of mind' - Goodbye duplication work"
+                    title="Recall knowledge you forgot"
+                />
                 <!-- DO YOUR WORK IN ONE PLACE -->
-                <div>
-                    <DoYourWork
-                        category_one="Ask AIs, Internet"
-                        category_three="Work with AI alogside you"
-                        category_two="Save chat as note"
-                        image_source_one="/images/ask-ai.png"
-                        image_source_three="/videos/work-with-ai.gif"
-                        image_source_two="/images/save-chat.png"
-                        subtitle_one="Ask AIs & internet along side your working docs."
-                        subtitle_two="Goodbye context switching"
-                        title="Do your knowledge work in one place"
-                    />
-                </div>
+                <DoYourWork
+                    category_one="Ask AIs, Internet"
+                    category_three="Work with AI alogside you"
+                    category_two="Save chat as note"
+                    image_source_one="/images/ask-ai.png"
+                    image_source_three="/videos/work-with-ai.gif"
+                    image_source_two="/images/save-chat.png"
+                    subtitle_one="Ask AIs & internet along side your working docs."
+                    subtitle_two="Goodbye context switching"
+                    title="Do your knowledge work in one place"
+                />
                 <!-- NEVER LOSE CONTEXT -->
-                <div>
-                    <NeverLoseContext
-                        category_one="Input task in daily note"
-                        category_two="Input task on mobile"
-                        image_source_one="/images/daily-note.png"
-                        image_source_two="/images/talk.png"
-                        subtitle_one="Find every open task with its context in one view"
-                        title="Never lose context for your tasks again"
-                    />
-                </div>
+                <NeverLoseContext
+                    category_one="Input task in daily note"
+                    category_two="Input task on mobile"
+                    image_source_one="/images/daily-note.png"
+                    image_source_two="/images/talk.png"
+                    subtitle_one="Find every open task with its context in one view"
+                    title="Never lose context for your tasks again"
+                />
             </div>
         </div>
     </Container>

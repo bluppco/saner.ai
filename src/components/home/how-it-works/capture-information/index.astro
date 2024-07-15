@@ -1,11 +1,12 @@
 ---
 
-// IMPORT ASTRO ATOMS
-import HeadingThreeCenter from "@/atoms/atoms-shiva/headings/three/center/index.astro"
-import HeadingTwoCenter from "@/atoms/atoms-shiva/headings/two/center/index.astro"
-
 // IMPORT ASTRO COMPONENT
 import Navigation from "@/components/home/how-it-works/navigation/index.astro"
+
+// IMPORT ASTRO ATOMS
+import HeadingThreeCenter from "@/atoms/atoms-shiva/headings/three/lg/center/index.astro"
+import HeadingTwoCenter from "@/atoms/atoms-shiva/headings/two/five-xl/center/index.astro"
+import PictureCover from "@/atoms/picture/internal/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -13,8 +14,8 @@ const {
     category_one,
     category_three,
     category_two,
-    image_source_two,
     image_source_one,
+    image_source_two,
     subtitle_one,
     subtitle_two,
     title,
@@ -31,32 +32,24 @@ const {
         <HeadingThreeCenter>{ subtitle_two }</HeadingThreeCenter>
     </div>
     <nav class="first-section-nav flex flex-col items-center justify-center md:flex-row gap-4">
-        <div class="flex-1" data-image-index="1">
-            <Navigation>{ category_one }</Navigation>
-        </div>
-        <div class="flex-1" data-image-index="2">
-            <Navigation>{ category_two }</Navigation>
-        </div>
-        <div class="flex-1" data-image-index="3">
-            <Navigation>{ category_three }</Navigation>
-        </div>
+        <Navigation index="1">{ category_one }</Navigation>
+        <Navigation index="2">{ category_two }</Navigation>
+        <Navigation index="3">{ category_three }</Navigation>
     </nav>
     <div class="relative image-container-one">
-        <div class="first-section-content rounded-3xl hidden">
+        <div class="first-section-content rounded-3xl overflow-hidden hidden">
             <video autoplay loop muted class="rounded-3xl" src={ video_source }></video>
         </div>
-        <div class="first-section-content rounded-3xl hidden">
-            <img 
-                alt="" 
-                class="object-cover w-full h-full" 
-                src={ image_source_one } 
+        <div class="first-section-content rounded-3xl overflow-hidden hidden">
+            <PictureCover 
+                alternative_text=""  
+                source={ image_source_one } 
             />
         </div>
-        <div class="first-section-content rounded-3xl hidden">
-            <img 
-                alt="" 
-                class="object-cover w-full h-full" 
-                src={ image_source_two } 
+        <div class="first-section-content rounded-3xl overflow-hidden hidden">
+            <PictureCover 
+                alternative_text=""  
+                source={ image_source_two } 
             />
         </div>
     </div>
