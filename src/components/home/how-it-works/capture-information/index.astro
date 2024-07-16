@@ -5,8 +5,9 @@ import Navigation from "@/components/home/how-it-works/navigation/index.astro"
 
 // IMPORT ASTRO ATOMS
 import HeadingThreeCenter from "@/atoms/atoms-shiva/headings/three/lg/center/index.astro"
-import HeadingTwoCenter from "@/atoms/atoms-shiva/headings/two/five-xl/center/index.astro"
+import HeadingTwoCenter from "@/atoms/atoms-shiva/headings/two/five-xl/semibold/center/index.astro"
 import PictureCover from "@/atoms/picture/internal/index.astro"
+import Video from "@/atoms/atoms-shiva/video/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -38,15 +39,15 @@ const {
     </nav>
     <div class="relative image-container-one">
         <div class="first-section-content rounded-3xl overflow-hidden hidden">
-            <video autoplay loop muted class="rounded-3xl" src={ video_source }></video>
+            <Video source={ video_source }/>
         </div>
-        <div class="first-section-content rounded-3xl overflow-hidden hidden">
+        <div class="first-section-content rounded-3xl overflow-hidden hidden w-full">
             <PictureCover 
                 alternative_text=""  
                 source={ image_source_one } 
             />
         </div>
-        <div class="first-section-content rounded-3xl overflow-hidden hidden">
+        <div class="first-section-content rounded-3xl overflow-hidden hidden w-full">
             <PictureCover 
                 alternative_text=""  
                 source={ image_source_two } 
