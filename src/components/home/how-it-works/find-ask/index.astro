@@ -1,12 +1,12 @@
 ---
 
-// IMPORT ASTRO ATOMS
-import HeadingThreeCenter from "@/atoms/atoms-shiva/headings/three/lg/center/index.astro"
-import HeadingTwoCenter from "@/atoms/atoms-shiva/headings/two/five-xl/center/index.astro"
-import PictureCover from "@/atoms/picture/internal/index.astro"
-
 // IMPORT ASTRO COMPONENTS
 import Navigation from "@/components/home/how-it-works/navigation/index.astro"
+
+// IMPORT ASTRO ATOMS
+import HeadingThreeCenter from "@/atoms/atoms-shiva/headings/three/lg/center/index.astro"
+import HeadingTwoCenter from "@/atoms/atoms-shiva/headings/two/five-xl/semibold/center/index.astro"
+import PictureCover from "@/atoms/picture/internal/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -37,19 +37,19 @@ const {
         <Navigation index="3">{ category_three }</Navigation>
     </nav>
     <div class="relative image-container-two">
-        <div class="second-section-content rounded-3xl overflow-hidden hidden">
+        <div class="second-section-content rounded-3xl overflow-hidden hidden w-full aspect-video">
             <PictureCover
                 alternative_text=""  
                 source={ image_source_one } 
             />
         </div>
-        <div class="second-section-content rounded-3xl overflow-hidden hidden">
+        <div class="second-section-content rounded-3xl overflow-hidden hidden w-full aspect-video">
             <PictureCover
                 alternative_text=""  
                 source={ image_source_two } 
             />
         </div>
-        <div class="second-section-content rounded-3xl overflow-hidden hidden">
+        <div class="second-section-content rounded-3xl overflow-hidden hidden w-full aspect-video">
             <PictureCover
                 alternative_text=""  
                 source={ image_source_three} 
