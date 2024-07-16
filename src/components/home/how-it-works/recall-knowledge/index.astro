@@ -2,7 +2,7 @@
 
 // IMPORT ASTRO ATOMS
 import HeadingThreeCenter from "@/atoms/atoms-shiva/headings/three/lg/center/index.astro"
-import HeadingTwoCenter from "@/atoms/atoms-shiva/headings/two/five-xl/center/index.astro"
+import HeadingTwoCenter from "@/atoms/atoms-shiva/headings/two/five-xl/semibold/center/index.astro"
 import PictureCover from "@/atoms/picture/internal/index.astro"
 
 // GET ASTRO PROPS
@@ -23,8 +23,10 @@ const {
         <HeadingThreeCenter>{ subtitle_one }</HeadingThreeCenter>
         <HeadingThreeCenter>{ subtitle_two }</HeadingThreeCenter>
     </div>
-    <PictureCover
-        alternative_text=""  
-        source={ image_source } 
-    />
+    <div class="rounded-3xl overflow-hidden w-full aspect-video">
+        <PictureCover
+            alternative_text=""  
+            source={ image_source } 
+        />
+    </div> 
 </div>
