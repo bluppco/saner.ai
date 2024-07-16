@@ -1,7 +1,7 @@
 ---
 
 // IMPORT ASTRO LAYOUTS
-import Container from "@/layouts/container/index.astro"
+import Container from "@/layouts/container-shiva/index.astro"
 
 // IMPORT ASTRO COMPONENTS
 import FeaturesCard from "@/components/home/features/features-card/index.astro"
@@ -55,14 +55,20 @@ const feature_data = [
                 <HeadingTwoFiveXlCenter>{ data.title }</HeadingTwoFiveXlCenter>
                 <HeadingThreeLgCenter>{ data.sub_title }</HeadingThreeLgCenter>
                 <div class="grid grid-row md:grid-cols-3 items-center justify-center gap-4">
-                    {feature_data.map((feature, index) =>(
-                        <FeaturesCard
-                            key={ index }
-                            source={ feature.source }
-                            sub_title={ feature.sub_title }
-                            title={ feature.title }
-                        />
-                    ))}
+                    {
+
+                        feature_data.map((feature, index) =>(
+
+                            <FeaturesCard
+                                key={ index }
+                                source={ feature.source }
+                                sub_title={ feature.sub_title }
+                                title={ feature.title }
+                            />
+
+                        ))
+
+                    }
                 </div>
             </div>
             <div class="flex flex-col gap-8">
