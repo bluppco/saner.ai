@@ -5,7 +5,7 @@ import ImageCard from "@/components/home/more-about-vision/image-card/index.astr
 import SocialIcons from "@/components/home/more-about-vision/social-icon/index.astro"
 
 // IMPORT ASTRO ATOMS
-import HeadingFourCenter from "@/atoms/atoms-nandini/headings/four/center/index.astro"
+import HeadingFourCenter from "@/atoms/atoms-nandini/headings/four/4xl/medium/center/index.astro"
 import PictureInternal from "@/atoms/picture/internal/index.astro"
 
 // GET ASTRO PROPS
@@ -34,11 +34,9 @@ const {
 } = Astro.props
 
 ---
-<div class="m-5">
-    <div class="gap-20">
-        <HeadingFourCenter>{ title }</HeadingFourCenter>
-    </div>
-    <div class="cursor-pointer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:flex lg:justify-center pb-20 mx-8">
+<div class="grid gap-14 my-10">
+    <HeadingFourCenter>{ title }</HeadingFourCenter>
+    <div class="cursor-pointer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:flex lg:justify-center pb-20 mx-8 lg:mx-12 xl:mx-32 2xl:mx-60">
         <ImageCard
             alternative_text="Card-Image"
             card_desc={ card1_desc1 }
@@ -71,8 +69,8 @@ const {
         />
     </div>
     <!-- Icons -->
-    <div class="cursor-pointer flex-wrap md:flex gap-16 justify-center text-center space-y-6 md:space-y-0 pb-32 mx-8">
-        <div class="flex justify-between space-x-8">
+    <div class="grid cursor-pointer md:flex gap-16 justify-center pb-32 mx-8">
+        <div class="flex justify-between gap-8">
             <SocialIcons
                 alternative_text="ChromeExtension"
                 icon_desc1={ icon1_desc1 }
@@ -86,7 +84,7 @@ const {
                 source="/discord_icon.svg"
             />
         </div>
-        <div class="flex justify-between space-x-8">
+        <div class="flex justify-between gap-8">
             <SocialIcons
                 alternative_text="TwitterIcon"
                 icon_desc1={ icon3_desc1 }

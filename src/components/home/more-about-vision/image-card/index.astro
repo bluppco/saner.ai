@@ -1,9 +1,9 @@
 ---
 
 // IMPORT ASTRO ATOMS
-import HeadingFourXL from "@/atoms/atoms-nandini/headings/four/four-xl/index.astro"
+import HeadingFourXL from "@/atoms/atoms-nandini/headings/four/xl/medium/index.astro"
 import PictureInternal from "@/atoms/picture/internal/index.astro"
-import ParagraphGray from "@/atoms/atoms-nandini/paragraphs/gray/index.astro"
+import ParagraphGray from "@/atoms/atoms-nandini/paragraphs/xs/semibold/gray/index.astro"
 import ParagraphXS from "@/atoms/atoms-nandini/paragraphs/xs/index.astro"
 
 // GET ASTRO PROPS
@@ -14,12 +14,14 @@ const {
     card_heading,
     card_title,
     desc,
+    href_paragraph,
+    href_title,
     source,
 
 } = Astro.props
 
 ---
-<div class="col-span-1 max-w-md bg-white border rounded-2xl transition delay-200 hover:scale-105 duration-500 hover:text-purple-500">
+<div class="col-span-1 bg-white border rounded-2xl transition delay-200 hover:scale-105 duration-500 hover:text-purple-500">
     <div class="relative rounded-t-2xl overflow-hidden">
         <div class="">
             <PictureInternal
@@ -27,7 +29,7 @@ const {
                 source={ source }
             />
         </div>
-        <a href="/category/general-blogs/adhd/">
+        <a href={ href_paragraph }>
             <ParagraphGray>
                 { card_heading }
             </ParagraphGray>    
@@ -39,6 +41,8 @@ const {
         <ParagraphXS>{ card_desc }</ParagraphXS>
     </div>
     <div class="pb-40 px-7">
-        <HeadingFourXL>{ card_title }</HeadingFourXL>
+        <a href={ href_title }>
+            <HeadingFourXL>{ card_title }</HeadingFourXL>
+        </a>
     </div> 
 </div>

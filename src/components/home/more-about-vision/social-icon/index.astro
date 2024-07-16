@@ -2,7 +2,7 @@
 
 // IMPORT ASTRO ATOMS
 import PictureInternal from "@/atoms/picture/internal/index.astro"
-import ParagraphMedium from "@/atoms/atoms-nandini/paragraphs/medium/index.astro"
+import ParagraphMediumCenter from "@/atoms/atoms-nandini/paragraphs/medium/center/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -22,6 +22,6 @@ const {
             source={ source }
         />
     </div>
-    <ParagraphMedium>{ icon_desc1 }</ParagraphMedium>
-    <p>{ icon_desc2 }</p>
+    <ParagraphMediumCenter>{ icon_desc1 }</ParagraphMediumCenter>
+    <p class="text-center">{ icon_desc2 }</p>
 </div>
