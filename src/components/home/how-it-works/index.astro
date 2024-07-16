@@ -1,7 +1,7 @@
 ---
 
 // IMPORT ASTRO LAYOUTS
-import Container from "@/layouts/container/index.astro"
+import Container from "@/layouts/container-shiva/index.astro"
 
 // IMPORT ASTRO COMPONENTS
 import CaptureInformation from "@/components/home/how-it-works/capture-information/index.astro"
@@ -11,7 +11,7 @@ import NeverLoseContext from "@/components/home/how-it-works/never-lose-context/
 import RecallKnowledge from "@/components/home/how-it-works/recall-knowledge/index.astro"
 
 // IMPORT ASTRO ATOMS
-import HeadingOne from "@/atoms/atoms-shiva/headings/one/two-xl/white/index.astro"
+import HeadingOneWhite from "@/atoms/atoms-shiva/headings/one/two-xl/bold/white/index.astro"
 
 // HARDCODED DATA
 const data = {
@@ -27,7 +27,7 @@ const data = {
         <div class="flex flex-col gap-14">
             <div class="flex items-center justify-center">
                 <div class="bg-orange-400 px-16 py-2 rounded-3xl">
-                    <HeadingOne>{ data.title }</HeadingOne>
+                    <HeadingOneWhite>{ data.title }</HeadingOneWhite>
                 </div>
             </div>
             <div class="flex flex-col gap-40">
