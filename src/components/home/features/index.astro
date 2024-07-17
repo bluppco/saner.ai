@@ -1,0 +1,93 @@
+---
+
+// IMPORT ASTRO LAYOUTS
+import Container from "@/layouts/container-shiva/index.astro"
+
+// IMPORT ASTRO COMPONENTS
+import FeaturesCard from "@/components/home/features/features-card/index.astro"
+import FeaturesExtraCard from "@/components/home/features/features-extra-card/index.astro"
+
+// IMPORT ASTRO ATOMS
+import HeadingFourThreeXlCenter from "@/atoms/atoms-shiva/headings/four/three-xl/medium/center/index.astro"
+import HeadingThreeLgCenter from "@/atoms/atoms-shiva/headings/three/lg/center/index.astro"
+import HeadingTwoFiveXlCenter from "@/atoms/atoms-shiva/headings/two/five-xl/semibold/center/index.astro"
+
+// IMPORT REACT ICONS
+import Bars from "@/components/home/features/features-extra-card/react-icons/bars.jsx"
+import Folder from "@/components/home/features/features-extra-card/react-icons/folder.jsx"
+import Lock from "@/components/home/features/features-extra-card/react-icons/lock.jsx"
+import Speaker from "@/components/home/features/features-extra-card/react-icons/speaker.jsx"
+
+// HARDCODED DATA
+const data = {
+
+    title: "Come with automatic organizing",
+    title_two: "and essential features",
+    sub_title: "Easily become organized without getting bogged down with manual nitty-gritty",
+
+}
+const feature_data = [
+
+    {   
+        source: "/icons/inbox.jpg",
+        sub_title:"Display your new notes to get things done",
+        title: "Smart Inbox",
+    },
+    {   
+        source: "/icons/tag.svg",
+        sub_title:"Suggest tags based on note’s content & previous tags",
+        title: "Tag Suggestion",
+    },
+    {   
+        source: "/icons/note.png",
+        sub_title:"Easily connect with similar knowledge in the past",
+        title: "Similar Note",
+    },
+
+]
+
+---
+
+<section class="my-36">
+    <Container>
+        <div class="flex flex-col gap-10 px-16">
+            <div class="flex flex-col gap-6">
+                <HeadingTwoFiveXlCenter>{ data.title }</HeadingTwoFiveXlCenter>
+                <HeadingThreeLgCenter>{ data.sub_title }</HeadingThreeLgCenter>
+                <div class="grid grid-row md:grid-cols-3 items-center justify-center gap-4">
+                    {
+
+                        feature_data.map((feature, index) =>(
+
+                            <FeaturesCard
+                                key={ index }
+                                source={ feature.source }
+                                sub_title={ feature.sub_title }
+                                title={ feature.title }
+                            />
+
+                        ))
+
+                    }
+                </div>
+            </div>
+            <div class="flex flex-col gap-8">
+                <HeadingFourThreeXlCenter>{ data.title_two }</HeadingFourThreeXlCenter>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <FeaturesExtraCard title="Hierarchical folders">
+                        <Folder size={30} />
+                    </FeaturesExtraCard>
+                    <FeaturesExtraCard title="Hardened security">
+                        <Lock size={30} />
+                    </FeaturesExtraCard>
+                    <FeaturesExtraCard title="Recording to text">
+                        <Speaker size={30} />
+                    </FeaturesExtraCard>
+                    <FeaturesExtraCard title="AI Task Assistant (Coming soon)">
+                        <Bars size={30} />
+                    </FeaturesExtraCard>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>
