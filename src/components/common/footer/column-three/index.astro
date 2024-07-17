@@ -1,0 +1,31 @@
+---
+
+// IMPORT ASTRO ATOMS
+import ListitemSmallWhite from "@/atoms/atoms-nandini/list-items/sm/white/index.astro"
+import ParagraphMediumZinc from "@/atoms/atoms-nandini/paragraphs/medium/zinc/index.astro"
+import { Picture } from "astro:assets"
+
+// GET ASTRO PROPS
+const { data } = Astro.props
+const { title } = Astro.props
+
+---
+<section class="items-center">
+    <ParagraphMediumZinc>{title}</ParagraphMediumZinc>
+    <ul class="text-gray-300 pt-5">
+        {
+            data.map( ( item ) => {
+                return (
+                            <ListitemSmallWhite>
+                                <a
+                                    aria-label={ "explore " + item.data.title }
+                                    href={ item.data.link }
+                                >
+                                    { item.data.title }
+                                </a>
+                            </ListitemSmallWhite>
+                )
+            })
+        }
+    </ul>
+</section>
