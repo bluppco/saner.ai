@@ -2,10 +2,9 @@
 
 // IMPORT ASTRO ATOMS
 import ButtonTeal from "@/atoms/atoms-nandini/buttons/teal/index.astro"
-import HeadingSevenXl from "@/atoms/atoms-nandini/headings/two/seven-xl/index.astro"
-import ParagraphLarge from "@/atoms/atoms-nandini/paragraphs/lg/index.astro"
-import ParagraphXS from "@/atoms/atoms-nandini/paragraphs/medium/xs/index.astro"
-
+import HeadingTwoSevenxlMediumCenter from "@/atoms/atoms-nandini/headings/two/seven-xl/medium/center/index.astro"
+import ParagraphLargeCenterGray from "@/atoms/atoms-nandini/paragraphs/lg/center/gray/index.astro"
+import ParagraphXsMediumCenter from "@/atoms/atoms-nandini/paragraphs/xs/medium/center/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -18,16 +17,27 @@ const {
 } = Astro.props
 
 ---
-<div class="bg-black rounded-t-full mt-5 pt-20 text-white text-center justify-center space-y-8">
-    <div class="h-4 w-20 bg-gray-800 rounded-3xl mx-auto">
-        <ParagraphXS>{ desc1 }</ParagraphXS>
+<section class="bg-black rounded-t-full mt-5 pt-20 text-white">
+    <div class="grid gap-8 justify-center">
+        <div class="h-4 w-20 bg-gray-800 rounded-3xl mx-auto">
+            <ParagraphXsMediumCenter>{ desc1 }</ParagraphXsMediumCenter>
+        </div>
+        <HeadingTwoSevenxlMediumCenter>{ title }</HeadingTwoSevenxlMediumCenter>
+        <ParagraphLargeCenterGray>{ desc2 }</ParagraphLargeCenterGray>
+        <div class="text-white w-60 mx-auto hover:text-black transition-all duration-200">
+            <div class="mx-auto flex justify-center">
+                <div class="relative flex overflow-hidden rounded-xl">
+                    <a href="/sign-up">
+                        <div class="animate-rotate absolute inset-0 bg-[conic-gradient(white_20deg,transparent_120deg)]"></div>
+                        <div class="relative flex p-0.5">
+                            <ButtonTeal>{ button_text }
+                                <svg enable-background="new 0 0 500 500" height="15px" id="Layer_1" version="1.1" viewBox="0 0 500 500" width="15px" style="fill:currentColor"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path clip-rule="evenodd" d="M276.253,195.487L312.781,55.39  c0.542-1.721,0.817-3.55,0.817-5.448c0-9.902-7.993-17.993-17.905-17.993c-5.624,0-10.629,2.544-13.896,6.637L99.451,275.072  c-2.449,3.088-3.902,7-3.902,11.269c0,9.991,8.178,18.172,18.17,18.172h110.018l-36.518,140.097c-0.55,1.731-0.818,3.55-0.818,5.448  c0,9.912,7.996,17.993,17.897,17.993c5.634,0,10.629-2.536,13.902-6.637l182.338-236.488c2.457-3.087,3.913-6.991,3.913-11.268  c0-9.99-8.182-18.171-18.168-18.171H276.253z" fill-rule="evenodd"/>
+                                </svg>
+                            </ButtonTeal>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div> 
     </div>
-    <HeadingSevenXl>{ title }</HeadingSevenXl>
-    <ParagraphLarge>{ desc2 }</ParagraphLarge>
-    <div class="text-white w-60 mx-auto hover:text-black transition-all duration-200">
-        <ButtonTeal>{ button_text }
-        <svg enable-background="new 0 0 500 500" height="15px" id="Layer_1" version="1.1" viewBox="0 0 500 500" width="15px" style="fill:currentColor"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path clip-rule="evenodd" d="M276.253,195.487L312.781,55.39  c0.542-1.721,0.817-3.55,0.817-5.448c0-9.902-7.993-17.993-17.905-17.993c-5.624,0-10.629,2.544-13.896,6.637L99.451,275.072  c-2.449,3.088-3.902,7-3.902,11.269c0,9.991,8.178,18.172,18.17,18.172h110.018l-36.518,140.097c-0.55,1.731-0.818,3.55-0.818,5.448  c0,9.912,7.996,17.993,17.897,17.993c5.634,0,10.629-2.536,13.902-6.637l182.338-236.488c2.457-3.087,3.913-6.991,3.913-11.268  c0-9.99-8.182-18.171-18.168-18.171H276.253z" fill-rule="evenodd"/>
-        </svg>
-        </ButtonTeal>
-    </div>   
-</div>
+</section>
