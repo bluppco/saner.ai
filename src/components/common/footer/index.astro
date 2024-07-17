@@ -1,82 +1,76 @@
 ---
 
-// IMPORT ASTRO ATOMS
-import HeadingFive from "@/atoms/atoms-nandini/headings/five/index.astro"
-import ListItemWhite from "@/atoms/atoms-nandini/list-items/white/index.astro"
+// IMPORT ASTRO COLLECTION
+import { getCollection } from 'astro:content'
 
-// IMPORTS ASTRO LAYOUTS
-import Container from "@/layouts/container/index.astro"
+// IMPORT FOOTER COLUMN ONE COLLECTION
+let footer_column_one = await getCollection('footer-column-one')
+footer_column_one = footer_column_one.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
 
-// GET ASTRO PROPS
-const {
+// IMPORT FOOTER COLUMN TWO COLLECTION
+let footer_column_two = await getCollection('footer-column-two')
+footer_column_two = footer_column_two.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
 
-    title1,
-    title2,
-    title3,
-    title4,
-    title1_desc1,
-    title1_desc2,
-    title1_desc3,
-    title1_desc4,
-    title2_desc1,
-    title2_desc2,
-    title2_desc3,
-    title3_desc1,
-    title3_desc2,
-    title3_desc3,
-    title3_desc4,
-    title3_desc5,
-    title3_desc6,
-    title3_desc7,
-    title4_desc1,
-    title4_desc2,
+// IMPORT FOOTER COLUMN THREE COLLECTION
+let footer_column_three = await getCollection('footer-column-three')
+footer_column_three = footer_column_three.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
 
-} = Astro.props
+// IMPORT FOOTER COLUMN FOUR COLLECTION
+let footer_column_four = await getCollection('footer-column-four')
+footer_column_four = footer_column_four.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
+
+// IMPORT FOOTER COLUMN FIVE COLLECTION
+let footer_column_five = await getCollection('footer-column-five')
+footer_column_five = footer_column_five.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
+
+// IMPORT ASTRO COMPONENTS
+import FooterColumnOne from "@/components/common/footer/column-one/index.astro"
+import FooterColumnTwo from "@/components/common/footer/column-two/index.astro"
+import FooterColumnThree from "@/components/common/footer/column-three/index.astro"
+import FooterColumnFour from "@/components/common/footer/column-four/index.astro"
+import FooterColumnFive from "@/components/common/footer/column-five/index.astro"
+import { frontmatter as company } from "@/content/footer-column-title/company.md"
+import { frontmatter as comparison } from "@/content/footer-column-title/comparison.md"
+import { frontmatter as contact } from "@/content/footer-column-title/contact.md"
+import { frontmatter as resources } from "@/content/footer-column-title/resources.md"
+import { frontmatter as usecases } from "@/content/footer-column-title/use-cases.md"
 
 ---
-<footer class="bg-black py-20">
-    <Container>
-        <div class="lg:flex justify-between lg:justify-evenly cursor-pointer space-y-8 lg:space-y-0">
-            <div class="flex justify-between lg:flex-none gap-40">
-                <div>
-                    <HeadingFive>{ title1 }</HeadingFive>
-                    <ul class="space-y-4 text-base text-gray-300 pt-5">
-                        <li><ListItemWhite>{ title1_desc1 }</ListItemWhite></li>
-                        <li><ListItemWhite>{ title1_desc2 }</ListItemWhite></li>
-                        <li><ListItemWhite>{ title1_desc3 }</ListItemWhite></li>
-                        <li><ListItemWhite>{ title1_desc4 }</ListItemWhite></li>
-                    </ul>
-                </div>
-                <div>
-                    <HeadingFive>{ title2 }</HeadingFive>
-                    <ul class="space-y-4 text-base text-gray-300 pt-5">
-                        <li><ListItemWhite>{ title2_desc1 }</ListItemWhite></li>
-                        <li><ListItemWhite>{ title2_desc2 }</ListItemWhite></li>
-                        <li><ListItemWhite>{ title2_desc3 }</ListItemWhite></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="md:flex md:justify-between lg:flex-none lg:gap-40">
-                <div>
-                    <HeadingFive>{ title3 }</HeadingFive>
-                    <ul class="space-y-4 text-base text-gray-300 pt-5">
-                        <li><ListItemWhite>{ title3_desc1 }</ListItemWhite></li>
-                        <li><ListItemWhite>{ title3_desc2 }</ListItemWhite></li>
-                        <li><ListItemWhite>{ title3_desc3 }</ListItemWhite></li>
-                        <li><ListItemWhite>{ title3_desc4 }</ListItemWhite></li>
-                        <li><ListItemWhite>{ title3_desc5 }</ListItemWhite></li>
-                        <li><ListItemWhite>{ title3_desc6 }</ListItemWhite></li>
-                        <li><ListItemWhite>{ title3_desc7 }</ListItemWhite></li>
-                    </ul>
-                </div>
-                <div>
-                    <HeadingFive>{ title4 }</HeadingFive>
-                    <ul class="space-y-4 text-base text-gray-300 pt-5">
-                        <li><ListItemWhite>{ title4_desc1 }</ListItemWhite></li>
-                        <li><ListItemWhite>{ title4_desc2 }</ListItemWhite></li>
-                    </ul>
-                </div>
-            </div> 
+<footer class="bg-black py-20 px-10">
+    <div class="lg:flex lg:justify-center cursor-pointer space-y-8 lg:space-y-0">
+        <div class="flex gap-32 sm:flex sm:gap-80 md:flex md:gap-96 md:mx-10 lg:gap-14 lg:mx-0">        
+            <FooterColumnOne
+                data={ footer_column_one }
+                title={ company.title }
+            />
+            <FooterColumnTwo
+                data={ footer_column_two }
+                title={ usecases.title }
+            />
         </div>
-    </Container>
+        <div class="md:flex md:gap-60 md:mx-10 lg:gap-16">
+            <FooterColumnThree
+                data={ footer_column_three }
+                title={ comparison.title }
+            />
+            <div class="hidden md:block">
+                <FooterColumnFour
+                    data={ footer_column_four }
+                    title={ resources.title }
+                />
+            </div>    
+        </div>
+        <div class="flex gap-24 sm:flex sm:gap-64 md:mx-10 lg:mx-6">
+            <div class="md:hidden">
+                <FooterColumnFour
+                    data={ footer_column_four }
+                    title={ resources.title }
+                />
+            </div>
+            <FooterColumnFive
+                data={ footer_column_five }
+                title={ contact.title }
+            />  
+        </div>
+    </div>
 </footer>
