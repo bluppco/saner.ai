@@ -2,9 +2,9 @@
 
 // IMPORT ASTRO ATOMS
 import ButtonTeal from "@/atoms/atoms-nandini/buttons/teal/index.astro"
-import HeadingTwoSevenxlMediumCenter from "@/atoms/atoms-nandini/headings/two/seven-xl/medium/center/index.astro"
+import HeadingTwoSevenxlMediumCenterWhite from "@/atoms/atoms-nandini/headings/two/seven-xl/medium/center/white/index.astro"
 import ParagraphLargeCenterGray from "@/atoms/atoms-nandini/paragraphs/lg/center/gray/index.astro"
-import ParagraphXsMediumCenter from "@/atoms/atoms-nandini/paragraphs/xs/medium/center/index.astro"
+import ParagraphXsMediumCenterWhite from "@/atoms/atoms-nandini/paragraphs/xs/medium/center/white/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -17,14 +17,14 @@ const {
 } = Astro.props
 
 ---
-<section class="bg-black rounded-t-full mt-5 pt-20 text-white">
+<section class="bg-black rounded-t-full mt-5 pt-20">
     <div class="grid gap-8 justify-center">
-        <div class="h-4 w-20 bg-gray-800 rounded-3xl mx-auto">
-            <ParagraphXsMediumCenter>{ desc1 }</ParagraphXsMediumCenter>
+        <div class="bg-gray-800 rounded-3xl mx-auto">
+            <ParagraphXsMediumCenterWhite>{ desc1 }</ParagraphXsMediumCenterWhite>
         </div>
-        <HeadingTwoSevenxlMediumCenter>{ title }</HeadingTwoSevenxlMediumCenter>
+        <HeadingTwoSevenxlMediumCenterWhite>{ title }</HeadingTwoSevenxlMediumCenterWhite>
         <ParagraphLargeCenterGray>{ desc2 }</ParagraphLargeCenterGray>
-        <div class="text-white w-60 mx-auto hover:text-black transition-all duration-200">
+        <div class="w-60 mx-auto hover:text-black transition-all duration-200">
             <div class="mx-auto flex justify-center">
                 <div class="relative flex overflow-hidden rounded-xl">
                     <a href="/sign-up">
