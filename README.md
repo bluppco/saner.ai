@@ -2,9 +2,9 @@
 
 ### Headings
 
-- Two-sevenxl-medium-center :  font-poppins text-center text-5xl md:text-7xl font-medium
+- Two-sevenxl-medium-center-white :  font-poppins text-center text-5xl md:text-7xl text-white font-medium
 - four-4xl : text-center text-4xl font-medium font-poppins tracking-wide
-- four-xl : font-medium text-xl font-poppins
+- four-xl-purple : font-medium text-xl font-poppins  transition delay-200 hover:scale-105 duration-500 hover:text-purple-500"
 
 ### Paragraphs
 
@@ -13,7 +13,7 @@
 - medium-zinc : text-zinc-500 font-medium
 - large : text-gray-300 text-center text-base md:text-lg font-poppins
 - xs-semibold-center-white : absolute top-4 left-6 text-white text-center py-3 px-2 font-semibold font-poppins text-xs tracking-wider bg-gray-800 rounded-full h-10
-- xs-medium-center : text-xs text-center font-medium
+- xs-medium-center-white : text-xs text-center text-white font-medium
 - xs : text-xs, font-medium
 
 ### Buttons
