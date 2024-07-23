@@ -2,6 +2,7 @@
 
 // IMPORT ASTRO ATOMS
 import HeadingFourXlMediumPurple from "@/atoms/atoms-nandini/headings/four/xl/medium/purple/index.astro"
+import Link from "@/atoms/links/index.astro"
 import PictureInternal from "@/atoms/picture/internal/index.astro"
 import ParagraphXsSemiboldCenterWhite from "@/atoms/atoms-nandini/paragraphs/xs/semibold/center/white/index.astro"
 import ParagraphXs from "@/atoms/atoms-nandini/paragraphs/xs/index.astro"
@@ -14,33 +15,37 @@ const {
     card_heading,
     card_title,
     desc,
-    href_paragraph,
-    href_title,
+    paragraph_link,
+    card_title_link,
     source,
 
 } = Astro.props
 
 ---
-<div class="bg-white border rounded-2xl">
+<div class="bg-white border rounded-2xl transition delay-100 hover:scale-105 duration-200 group">
     <div class="relative rounded-t-2xl overflow-hidden">
-        <div class="">
-            <PictureInternal
-                alternative_text={ alternative_text }
-                source={ source }
-            />
+        <div class="w-auto aspect-video">
+            <Link aria_label={ card_title } href={ card_title_link }>
+                <PictureInternal
+                    alternative_text={ alternative_text }
+                    source={ source }
+                />
+            </Link>
         </div>
-        <a href={ href_paragraph }>
-            <ParagraphXsSemiboldCenterWhite>{ card_heading }</ParagraphXsSemiboldCenterWhite>    
-        </a>
+        <div class="absolute top-4 left-6 py-3 px-2 bg-gray-800 rounded-full h-10">
+            <Link aria_label={ card_heading } href={ paragraph_link }>
+                <ParagraphXsSemiboldCenterWhite>{ card_heading }</ParagraphXsSemiboldCenterWhite>    
+            </Link>
+        </div>
     </div>
     <div class="inline-flex p-7 gap-3">
         <ParagraphXs>{ desc }</ParagraphXs>
         <ParagraphXs>⏺</ParagraphXs>
         <ParagraphXs>{ card_desc }</ParagraphXs>
     </div>
-    <div class="pb-40 px-7">
-        <a href={ href_title }>
+    <div class="pb-32 px-7">
+        <Link aria_label={ card_title } href={ card_title_link }>
             <HeadingFourXlMediumPurple>{ card_title }</HeadingFourXlMediumPurple>
-        </a>
+        </Link>
     </div> 
 </div>

@@ -1,122 +1,170 @@
 ---
 
+// IMPORT ASTO LAYOUTS
+import ContainerMoreAboutVision from "@/layouts/container-more-about-vision/index.astro"
+
 // IMPORT ASTRO COMPONENTS
 import ImageCard from "@/components/home/more-about-vision/image-card/index.astro"
 import SocialIcons from "@/components/home/more-about-vision/social-icon/index.astro"
 
 // IMPORT ASTRO ATOMS
 import HeadingFour4xlMediumCenter from "@/atoms/atoms-nandini/headings/four/4xl/medium/center/index.astro"
+import Link from "@/atoms/links/index.astro"
 import PictureInternal from "@/atoms/picture/internal/index.astro"
 
-// GET ASTRO PROPS
-const {
+// HARDCODED DATA
+const data= {
 
-    card1_desc1,
-    card2_desc1,
-    card3_desc1,
-    card1_heading1,
-    card2_heading1,
-    card3_heading1,
-    card1_title,
-    card2_title,
-    card3_title,
-    desc1,
-    icon1_desc1,
-    icon1_desc2,
-    icon2_desc1,
-    icon2_desc2,
-    icon3_desc1,
-    icon3_desc2,
-    icon4_desc1,
-    icon4_desc2,
-    title,
+    title:"More about Saner.ai Vision",
 
-} = Astro.props
+}
+
+// CARD ARRAY
+const card = [
+
+    {
+        alternative_text:"Card-Image",
+        card_desc:"3 weeks ago",
+        card_heading:"ADHD",
+        card_title:"A well-crafted ADHD tool for adults",
+        desc:"Austin Ngo",
+        paragraph_link:"/category/general-blogs/adhd/",
+        card_title_link:"/sanerai-adhd-tool-for-adults/",
+        source:"/card-img1.webp",
+    },
+    {
+        alternative_text:"Card-Image",
+        card_desc:"3 months ago",
+        card_heading:"FEATURES",
+        card_title:"Minimize Context Switching – How Saner.ai can revolutionize the Note-taking space",
+        desc:"Austin Ngo",
+        paragraph_link:"/category/introduction/feature/",
+        card_title_link:"/how-does-saner-ai-minimize-context-switching/",
+        source:"/card-img2.webp",
+    },
+    {
+        alternative_text:"Card-Image",
+        card_desc:"4 days ago",
+        card_heading:"FEATURES",
+        card_title:"Biggest Update: Smarter AI, Voice features, Chat with specific notes and More!",
+        desc:"Austin Ngo",
+        paragraph_link:"/category/introduction/feature/",
+        card_title_link:"/release-note-30-june-2024/",
+        source:"/card-img3.png",
+    },
+
+]
+
+// ICON ARRAY
+const icon = [
+    {
+        alternative_text:"ChromeExtension",
+        icon_heading:"Install Chrome Extension",
+        icon_desc:"Exclusive",
+        icon_link:"https://chromewebstore.google.com/detail/sanerai-capture-informati/ljhelnenkgmaljgibhbaphnoapdinjpp",
+        source:"/chrome-icon.svg",
+    },
+    {
+        alternative_text:"DiscordCommunity",
+        icon_heading:"Join the Community",
+        icon_desc:"Discord Channel",
+        icon_link:"https://discord.com/invite/emfJ3fqkkJ",
+        source:"/discord-icon.svg",
+    },
+    {
+        alternative_text:"TwitterIcon",
+        icon_heading:"Follow Us on Twitter",
+        icon_desc:"Latest news and updates",
+        icon_link:"/twitter.com/saner_ai",
+        source:"/twitter-icon.svg",
+    },
+    {
+        alternative_text:"ProductHuntLogo",
+        icon_heading:"Product Hunt",
+        icon_desc:"Latest launch",
+        icon_link:"/www.producthunt.com/products/saner.ai",
+        source:"/product-hunt-icon.svg",
+    },
+
+]
 
 ---
-<div class="grid gap-14 my-10">
-    <HeadingFour4xlMediumCenter>{ title }</HeadingFour4xlMediumCenter>
-    <div class="cursor-pointer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:flex lg:justify-center pb-20 mx-8 lg:mx-12 xl:mx-32 2xl:mx-60">
-        <ImageCard
-            alternative_text="Card-Image"
-            card_desc={ card1_desc1 }
-            card_heading={ card1_heading1 }
-            card_title={ card1_title }
-            desc={ desc1 }
-            href_paragraph="/category/general-blogs/adhd/"
-            href_title="/sanerai-adhd-tool-for-adults/"
-            source="/card-img1.webp"
-        />
-        <ImageCard
-            alternative_text="Card-Image"
-            card_desc={ card2_desc1 }
-            card_heading={ card2_heading1 }
-            card_title={ card2_title }
-            desc={ desc1 }
-            href_paragraph="/category/introduction/feature/"
-            href_title="/how-does-saner-ai-minimize-context-switching/"
-            source="/card-img2.webp"
-        />
-        <ImageCard
-            alternative_text="Card-Image"
-            card_desc={ card3_desc1 }
-            card_heading={ card3_heading1 }
-            card_title={ card3_title }
-            desc={ desc1 }
-            href_paragraph="/category/introduction/feature/"
-            href_title="/release-note-30-june-2024/"
-            source="/card-img3.png"
-        />
-    </div>
-    <!-- Icons -->
-    <div class="grid cursor-pointer md:flex gap-16 justify-center pb-32 mx-8">
-        <div class="flex justify-between gap-8">
-            <SocialIcons
-                alternative_text="ChromeExtension"
-                icon_desc1={ icon1_desc1 }
-                icon_desc2={ icon1_desc2 }
-                source="/chrome-icon.svg"
-            />
-            <SocialIcons
-                alternative_text="DiscordCommunity"
-                icon_desc1={ icon2_desc1 }
-                icon_desc2={ icon2_desc2 }
-                source="/discord-icon.svg"
-            />
+<section>
+    <ContainerMoreAboutVision>
+        <div class="space-y-14 my-10">
+            <HeadingFour4xlMediumCenter>{ data.title }</HeadingFour4xlMediumCenter>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-20">
+                {
+        
+                    card.map( ( item ) => {
+        
+                        return (
+        
+                                <ImageCard
+                                    alternative_text={ item.alternative_text }
+                                    card_desc={ item.card_desc }
+                                    card_heading={ item.card_heading }
+                                    card_title={ item.card_title }
+                                    desc={ item.card_desc }
+                                    paragraph_link={ item.paragraph_link }
+                                    card_title_link={ item.card_title_link }
+                                    source={ item.source }
+                                />
+        
+                        )
+        
+                    })
+        
+                }
+            </div>
+            <!-- Icons -->
+            <div class="grid grid-cols-2 md:flex gap-16 justify-center pb-32">
+                {
+        
+                    icon.map( ( item ) => {
+        
+                        return (
+                        
+                                <SocialIcons
+                                    alternative_text={ item.alternative_text }
+                                    icon_heading={ item.icon_heading }
+                                    icon_desc={ item.icon_desc }
+                                    icon_link={ item.icon_link }
+                                    source={ item.source }
+                                />
+                        
+                        )
+        
+                    })            
+        
+                }
+                
+            </div>
+            <div class="flex justify-evenly">
+                <div class="h-12 aspect-auto">
+                    <PictureInternal
+                        alternative_text="Productofday"
+                        source="/product-of-the-day.svg" 
+                    />
+                </div>
+                <Link aria_label="productivity" href="https://www.producthunt.com/products/saner-ai?utm_source=badge-top-post-topic-badge&utm_medium=badge#saner-ai-1">
+                    <div class="h-12 hidden md:block aspect-auto">
+                        <PictureInternal
+                            alternative_text="productivity"
+                            source="/productivity.svg"
+                        />
+                    </div>
+                </Link>
+                <Link aria_label="ai-for-that" href="https://theresanaiforthat.com/">
+                    <div class="h-12 hidden md:block aspect-auto">
+                        <PictureInternal
+                            alternative_text="ai"
+                            source="/ai-for-that.webp"
+                        />
+                    </div>
+                </Link>
+            </div>
         </div>
-        <div class="flex justify-between gap-8">
-            <SocialIcons
-                alternative_text="TwitterIcon"
-                icon_desc1={ icon3_desc1 }
-                icon_desc2={ icon3_desc2 }
-                source="/twitter-icon.svg"
-            />
-            <SocialIcons
-                alternative_text="ProductHuntLogo"
-                icon_desc1={ icon4_desc1 }
-                icon_desc2={ icon4_desc2 }
-                source="/product-hunt-icon.svg"
-            />
-        </div>
-    </div>
-    <div class="flex justify-evenly">
-        <div class="h-12 aspect-auto w-auto">
-            <PictureInternal
-                alternative_text="Productofday"
-                source="/product-of-the-day.svg" 
-            />
-        </div>
-        <div class="h-12 hidden md:block w-auto aspect-auto">
-            <PictureInternal
-                alternative_text="productivity"
-                source="/productivity.svg"
-            />
-        </div>
-        <div class="h-12 hidden md:block w-auto aspect-auto">
-            <PictureInternal
-                alternative_text="ai"
-                source="/ai-for-that.webp"
-            />
-        </div>
-    </div>
-</div>
+    </ContainerMoreAboutVision>
+</section>
+

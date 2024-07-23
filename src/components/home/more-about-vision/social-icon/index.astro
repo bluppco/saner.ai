@@ -1,6 +1,7 @@
 ---
 
 // IMPORT ASTRO ATOMS
+import Link from "@/atoms/links/index.astro"
 import PictureInternal from "@/atoms/picture/internal/index.astro"
 import ParagraphCenter from "@/atoms/atoms-nandini/paragraphs/center/index.astro"
 import ParagraphMediumCenter from "@/atoms/atoms-nandini/paragraphs/medium/center/index.astro"
@@ -9,20 +10,25 @@ import ParagraphMediumCenter from "@/atoms/atoms-nandini/paragraphs/medium/cente
 const {
 
     alternative_text,
-    icon_desc1,
-    icon_desc2,
+    icon_desc,
+    icon_heading,
+    icon_link,
     source,
 
 } = Astro.props
 
 ---
-<div class="grid gap-2">
-    <div class="mx-10 size-20 transition delay-200 hover:scale-110 duration-500">
-        <PictureInternal
-            alternative_text={ alternative_text }
-            source={ source }
-        />
+<div class="">
+    <div class="mx-auto size-20 transition delay-200 hover:scale-110 duration-500">
+        <Link aria_label={ icon_heading } href={ icon_link }>
+            <PictureInternal
+                alternative_text={ alternative_text }
+                source={ source }
+            />
+        </Link>
     </div>
-    <ParagraphMediumCenter>{ icon_desc1 }</ParagraphMediumCenter>
-    <ParagraphCenter>{ icon_desc2 }</ParagraphCenter>
+    <Link aria_label={ icon_heading } href={ icon_link }>
+        <ParagraphMediumCenter>{ icon_heading }</ParagraphMediumCenter>
+    </Link>
+    <ParagraphCenter>{ icon_desc }</ParagraphCenter>
 </div>
