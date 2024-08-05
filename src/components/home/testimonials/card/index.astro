@@ -1,0 +1,76 @@
+---
+
+// IMPORT ASTRO ATOMS'
+import LinkNewWindow from "@/atoms/links/new-window/index.astro"
+import ParagraphBaseGray from "@/atoms/atoms-shiva/paragraphs/base/gray/index.astro"
+import ParagraphBaseLightGray from "@/atoms/atoms-shiva/paragraphs/base/light-gray/index.astro"
+import ParagraphBaseMedium from "@/atoms/atoms-shiva/paragraphs/base/medium/index.astro"
+import ParagraphSmGray from "@/atoms/atoms-shiva/paragraphs/sm/gray/index.astro"
+import PictureContain from "@/atoms/picture/internal/contain/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    description,
+    link,
+    name,
+    source,
+    title,
+
+} = Astro.props
+
+const star_count = 5
+
+// HARDCODED DATA
+const data = {
+
+    bottom_tag: "Review of Saner.AI",
+    star_source: "icons.star.svg",
+    source: "/icons/p.svg",
+
+}
+
+---
+
+<LinkNewWindow href={ link }>
+    <div class="flex flex-col gap-6 border border-gray-200 p-4">
+        <div class="flex gap-2">
+            {
+            
+                Array.from( { length: star_count }).map( () => (
+    
+                    <div class="size-4">
+                        <PictureContain
+                            alternative_text=""
+                            source="/icons/star.svg"
+                        />
+                    </div>
+    
+                ))
+            
+            }
+        </div>
+        <ParagraphBaseGray>{ description }</ParagraphBaseGray>
+        <div class="flex items-center gap-4">
+            <div class="size-10 rounded-full overflow-hidden">
+                <PictureContain
+                    alternative_text=""
+                    source={ source }
+                />
+            </div>
+            <div>
+                <ParagraphBaseMedium>{ name }</ParagraphBaseMedium>
+                <ParagraphSmGray>{ title }</ParagraphSmGray>
+            </div>
+        </div>
+        <div class="flex justify-between border-t border-gray-200 py-4">
+            <ParagraphBaseLightGray>{ data.bottom_tag }</ParagraphBaseLightGray>
+            <div class="size-8">
+                <PictureContain
+                    alternative_text=""
+                    source={ data.source }
+                />
+            </div>
+        </div>
+    </div>
+</LinkNewWindow>
