@@ -1,0 +1,36 @@
+---
+
+// IMPORT ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORT ASTRO COMPONENTS
+import ButtonAnimation from "@/components/home/get-started/button-animation/index.astro"
+
+// IMPORT ASTRO ATOMS
+import HeadingTwoSevenxlMediumCenterWhite from "@/atoms/atoms-nandini/headings/two/7xl/medium/center/white/index.astro"
+import ParagraphLargeCenterGray from "@/atoms/atoms-nandini/paragraphs/lg/center/gray/index.astro"
+import ParagraphXsMediumCenterWhite from "@/atoms/atoms-nandini/paragraphs/xs/medium/center/white/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    button_text:"Get Started in minutes",
+    desc1:"SANER.AI",
+    desc2:"Simplify your life, release your stress and improve your work",
+    title:"Simple yet Powerful",
+
+}
+
+---
+<section class="bg-black rounded-t-full mt-5 pt-20">
+    <Container>
+        <div class="space-y-8 justify-center">
+            <div class="w-20 mx-auto bg-gray-800 rounded-full overflow-hidden">
+                <ParagraphXsMediumCenterWhite>{ data.desc1 }</ParagraphXsMediumCenterWhite>
+            </div>
+            <HeadingTwoSevenxlMediumCenterWhite>{ data.title }</HeadingTwoSevenxlMediumCenterWhite>
+            <ParagraphLargeCenterGray>{ data.desc2 }</ParagraphLargeCenterGray>
+            <ButtonAnimation>{ data.button_text }</ButtonAnimation>
+        </div>
+    </Container>
+</section>

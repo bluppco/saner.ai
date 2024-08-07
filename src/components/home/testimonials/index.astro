@@ -1,66 +1,116 @@
 ---
 
-// IMPORT COLLECTIONS FROM ASTRO
-import { getCollection } from "astro:content";
+// IMPORT ASTRO LAYOUTS
+import ContainerSmall from "@/layouts/container-small/index.astro"
 
-let testimonial_data = await getCollection("testimonials");
-testimonial_data = testimonial_data.sort( ( a, b ) => a.data.order - b.data.order )
-
-//console.log(testimonial_data);
+// IMPORT ASTRO COMPONENTS
+import TestimonialCard from "@/components/home/testimonials/card/index.astro"
 
 // IMPORT ASTRO ATOMS
-import HeadingTwo from "@/atoms/akash/heading/two/index.astro"
-import HeadingThree from "@/atoms/akash/heading/three/index.astro"
-import Star from "@/atoms/akash/star/index.astro"
-import ProfilePhoto from "@/atoms/akash/profile/photo/index.astro"
-import Links from "@/atoms/links/index.astro"
-import ProfileName from "@/atoms/akash/profile/name/index.astro"
-import ProfileJob from "@/atoms/akash/profile/job/index.astro"
-import Picture from "@/atoms/picture/internal/contain/index.astro"
+import HeadingTwoFiveXl from "@/atoms/atoms-shiva/headings/two/five-xl/center/index.astro"
+import HeadingTwoFiveXlSemibold from "@/atoms/atoms-shiva/headings/two/five-xl/semibold/center/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    subtitle: "Entrepreneurs, ADHDr, Learners & Creators",
+    title: "Loved by",
+
+}
+const card_data = [
+
+    [
+        {
+            description:"This was the best spent 8 hours of any tool, I have used on Product Hunt in a long while. Saner makes the TOP 10 of my experience on Product Hunt for the past 12 months. For the current test case related to a Kickstarter launch of a product, to the knowledge base for research on a very technical and legal topic, and to the general second brain with Notion and Obsidian; I was thoroughly amazed at this beta version. Kudos to the development team and the general roadmap they are pursuing. The UI/UX experience is very user-friendly and is pretty intuitive, with nice humor embedded along your journey using the tool. I look forward to using the tool with my workflow over the next couple of weeks. At times,...",
+            name:"Victor Jung",
+            source:"/images/victor.avif",
+            title:"Serial entrepreneur",
+        },
+        {
+            description:"I used to use Notion, Google Docs, and Obsidian. But now it is Saner.AI The app helps me to do all of the things I hate to do when writing/storing information The past: Read interesting things or self-reflection -> draft (writing) -> leave it there forever (like trash) Now:  Read interesting things or self-reflection -> draft -> Saner structures them or make them reusable (not trash anymore) -> easily recall all knowledge I write Highly recommend",
+            name:"Trieu Ngoc Duy",
+            source:"/images/trieu.avif",
+            title:"Building a super app for musicgame",
+        },
+        {
+            description:"Its been 2 days since I first used Saner.AI. Really wonderful experience. I had a hard time document all my design decision and user interview without theming and synthesizing them. With Saner, this works just seem so easy now. And the semantic search and chatting with bot makes the workflow more nature and less cocky machinary thingy. :D",
+            name:"Urbankix",
+            source:"/images/avatar.avif",
+            title:"Getting better in Product Design",
+        },
+    ],
+    [   
+        {
+            description:"Congratulations on the launch! I have been excited to have had the opportunity to use Saner, and am looking forward to continuing to use it in the future for my use cases. The user interface is very intuitive, and I've appreciated being able to give my feedback and see the responsiveness of the developers to my suggestions for improvement. I've used MANY different personal knowledge management tools, but this tool's marriage of AI and my personal documents opens up a whole new realm of opportunities to synthesize and leverage what I am interested in to find and create new insights based on that information!",
+            name:"Marlon K. Brownlee",
+            source:"/images/marlon.avif",
+            title:"Information Management Specialist",
+        },
+        {
+            description:"Since I started using Saner.AI, I've noticed a significant improvement in how I organize and access my notes and ideas. The platform's ability to instantly capture information and automatically organize it has saved me hours previously spent on manual organization. This is especially valuable in the world of digital marketing, where time is money.",
+            name:"Julio Aguirre",
+            source:"/images/julio.avif",
+            title:"Driving Digital Innovation & Growth",
+        },
+        {
+            description:"I appreciate how saner.ai seems to get the unique challenges of ADHD, offering features that help me manage time, focus, and even remember important details.",
+            name:"Rebecca",
+            source:"/images/avatar.avif",
+            title:"Marketing owner ",
+        },
+    ],
+    [
+        {
+            description:"Saner.ai is getting closer towards my dream 2nd brain app... - easy note-taking (quick styling, voice commands and transcription, non-proprietary formats, possibly local storage) - integrated AI functionality (semantic search/clustering, generate text, images, ... and personal AI that builds and understands knowledge-base along with me, while also gaining a social understanding of how to best communicate and aid me) - intuitive UI with satisfying flow (graph views and possibly AR/VR compatibility to view notes in a room) - integrated IDE so I can build and run code directly inside the app for the personal AI to understand I know this may seem very overwhelming and dreamy but I think this is going to be a technological",
+            name:"Robbe C",
+            source:"/images/avatar.avif",
+            title:"bioinformatician",
+        },
+        {
+            description:"I'm impressed by how saner.ai adapts to my ADHD style of working. It helps me stay on track, avoid distractions, and access relevant information quickly. It's like having a personal AI assistant that knows me well.",
+            name:" CHRIS ROBERTg",
+            source:"/images/avatar.avif",
+            title:"",
+        },
+    ],
+
+]
 
 ---
-<div class="w-full flex justify-center items-center my-10" >
-    <div class="w-[80%] flex flex-col justify-center items-center">
-        <HeadingTwo>Loved By</HeadingTwo>
-        <HeadingThree>Entrepreneurs, ADHDr, Learners & Creators</HeadingThree>
-        <div class=" rounded-md border-[1px] border-black border-opacity-20 flex flex-wrap gap-5 p-5 justify-start mt-10 items-baseline">
 
-            { 
+<section class="py-16">
+    <ContainerSmall>
+        <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-2">
+                <HeadingTwoFiveXlSemibold>{ data.title }</HeadingTwoFiveXlSemibold>
+                <HeadingTwoFiveXl>{ data.subtitle }</HeadingTwoFiveXl>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 border border-gray-200">
+                {
 
-                testimonial_data.map(( item, index ) => (
-                    <div class=" border-[1px] border-black border-opacity-20 flex flex-col gap-8 p-5 w-1/2 md:w-1/3 lg:w-1/4  flex-grow flex-shrink">
-                        <div>
-                            <Links href={ item.data.reviewLink } aria_label={ item.data.title }>
-                                <Star />
-                            </Links>
+                    card_data.map( ( data ) => (
+
+                        <div class="flex flex-col gap-6">
+                            {
+
+                                data.map( ( card ) => (
+
+                                    <TestimonialCard
+                                        description={ card.description }
+                                        name={ card.name }
+                                        source={ card.source }
+                                        title={ card.title }
+                                    />
+
+                                ))
+
+                            }
                         </div>
-                        <Links href={ item.data.reviewLink } aria_label={ item.data.title }>
-                            <div>
-                                <p>"<span>{ item.data.review }</span>"</p>
-                            </div>
-                        </Links>
-                        <Links href={ item.data.profileLink } aria_label={ item.data.title }>
-                            <div class="flex justify-start items-center gap-4" >
-                                <ProfilePhoto source = { item.data.profilePhoto } alternative_text = { item.data.title }/>
-                                <div class=" flex flex-col gap-1">
-                                    <ProfileName>{ item.data.title }</ProfileName>
-                                    <ProfileJob>{ item.data.job }</ProfileJob>
-                                </div>
-                            </div>
-                        </Links>
-                        <Links href={ item.data.reviewLink } aria_label={ item.data.title }>
-                             <div class=" flex justify-between items-center border-t-[1px] border-gray-300 pt-4">
-                                <p class=" text-gray-400" >Review of Saner.AI</p>
-                                <div class=" w-6 aspect-square rounded-full">
-                                    <Picture source = "/icons/p.png"/>
-                                </div>
-                            </div>
-                        </Links>
-                    </div>
-                ))
 
-            }
+                    ))
 
+                }
+            </div>
         </div>
-    </div>
-</div>
+    </ContainerSmall>
+</section>

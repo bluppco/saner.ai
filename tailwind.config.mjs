@@ -18,6 +18,12 @@ module.exports = {
 		},
 		extend: {
 			keyframes: {
+
+				rotate: {
+					"0%": { transform: "rotate(-360deg) scale(10)" },
+					"100%": { transform: "rotate(0deg) scale(10)" },
+				  },
+
 				"accordion-down": {
 					from: { height: "0" },
 					to: { height: "var(--radix-accordion-content-height)" },
@@ -26,12 +32,16 @@ module.exports = {
 					from: { height: "var(--radix-accordion-content-height)" },
 					to: { height: "0" },
 				},
-			},
-			animation: {
+      		},
+      		animation: {
+
+				rotate: "rotate 3s linear infinite",
+
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
 			},
 			colors: {
+
 				"bluish-gray": "#4A597C",
 				"voilet-bg": "#EADFEC",
 				"voilet-text": "#A571B5",

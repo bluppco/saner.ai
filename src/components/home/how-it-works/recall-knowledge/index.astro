@@ -1,0 +1,32 @@
+---
+
+// IMPORT ASTRO ATOMS
+import HeadingThreeCenter from "@/atoms/atoms-shiva/headings/three/lg/center/index.astro"
+import HeadingTwoCenter from "@/atoms/atoms-shiva/headings/two/five-xl/semibold/center/index.astro"
+import PictureCover from "@/atoms/picture/internal/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    image_source,
+    subtitle_one,
+    subtitle_two,
+    title,
+
+} = Astro.props
+
+---
+
+<div class="flex flex-col gap-6">
+    <HeadingTwoCenter>{ title }</HeadingTwoCenter>
+    <div>
+        <HeadingThreeCenter>{ subtitle_one }</HeadingThreeCenter>
+        <HeadingThreeCenter>{ subtitle_two }</HeadingThreeCenter>
+    </div>
+    <div class="rounded-3xl overflow-hidden w-full aspect-video">
+        <PictureCover
+            alternative_text=""  
+            source={ image_source } 
+        />
+    </div> 
+</div>

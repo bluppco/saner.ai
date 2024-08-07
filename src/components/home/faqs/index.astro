@@ -1,31 +1,79 @@
 ---
 
+// IMPORT ASTRO LAYOUTS
+import ContainerSmall from "@/layouts/container-small/index.astro"
+
+// IMPORT JSX COMPONENTS
+import AccordionComponent from "@/components/home/faqs/accordion/jsx/index"
+
 // IMPORT ASTRO ATOMS
-import HeadingTwo from "@/atoms/akash/heading/two/index.astro"
+import HeadingTwo5XlSemibold from "@/atoms/atoms-shiva/headings/two/five-xl/semibold/center/index.astro"
 
-// IMPORT ASTRO COLLECTION
-import { getCollection } from "astro:content";
-let faq_data = await getCollection("faqs");
-faq_data = faq_data.sort( ( a, b ) => a.data.order - b.data.order)
+// HARDCODED DATA
+const data = {
 
-// IMPORT TSX COMPONENT
-import Questions from "@/components/home/faqs/index";
+    title: "Have a question?",
+
+}
+const accordionData = [
+
+    { 
+        content: "If you are struggling with context switching, overwhelming features & forgetfulness, then Saner.ai is a tool for you. If you captured thousands of notes wholeheartedly but couldn't retrieve them when you wanted and failed to make use of them, then Saner.ai is a tool for you Saner.ai is an All-in-one AI Productivity app for ADHD with a simple-design note and to-do list with best-in-class AI Assistants to help you easily note, recall, create insights, and get things done", 
+        title: "Why should I choose Saner.ai?", 
+    },
+    { 
+        content: "We focus on building a more seamless workflow to reduce context switching with an emphasis on AIs. We have differentiated features like 1) It makes note-taking easy. You won’t get too many things on the screen to burden or distract you. 2) You can research, write, organize, find, and use your notes with minimal switching between apps or views not to disrupt your focus. 3) It offers Skai, your smart personal assistant that knows all your notes. It can solve ADHD's memory problem, which makes you struggle to remember information, by helping you with any questions about any information you noted. 4) Saner.AI will offer task assistance via the chat interface. It includes planning, status checks, scheduling, and optimized reminders for ADHD. That's why we believe Saner.ai is the well-crafted AI Productivity app for ADHD.", 
+        title: "Why is Saner.ai an ADHD-friendly productivity app?", 
+    },
+    { 
+        content: "Yes! One of the co-founders of Saner.ai started this app because he has ADHD and couldn't find any apps that worked well for him in handling information. That's why we always keep ADHD in mind when we design the product to make sure we create a simple yet powerful AI productivity app for ADHD", 
+        title: "is Saner.ai built by ADHDer?", 
+    },
+    { 
+        content: "We currently offer the Saner.AI free package ",
+        title: "Is Saner.ai free?", 
+    },
+    { 
+        content: "Our beta version is an early release that allows users to experience the vision of a smart AI productivity assistant. We are in the beta phase to actively experiment with the best set of features for our users. Please rest assured that we are making significant efforts to ensure the product is reliable. We have daily backup for your data, prioritize data security, and offer export option for all your notes During this stage, we offer a significant discount for early adopters like you because you also believe in the same vision of a better way to manage knowledge and tasks. We would love to hear your thoughts so please feel free to reach out anytime",
+        title: "What is the beta version?", 
+    },
+    { 
+        content: "At Saner.AI, we prioritize the security and privacy of your data. We do not train, sell, or share your data Our approach includes: Secure Storage: Your data is stored in encrypted form on secure servers, ensuring protection both while in transit and at rest. Privacy Compliance: We adhere to strict data protection regulations, safeguarding your rights and privacy. User Control and Consent: You have full control over your data through customizable access and sharing settings. Minimal Access Policy: Our team's access to your data is restricted and only utilized for service improvement and troubleshooting. Data Recovery: Regular backups are conducted, providing robust options for data recovery and version restoration. Transparency: We maintain a clear and detailed privacy policy, keeping you informed about how your data is managed. Your trust is paramount to us, and we're committed to maintaining the highest standards of data security and privacy.",
+        title: "How do you handle my data?", 
+    },
+    { 
+        content: "Absolutely, you can export thousands of notes that you accumulated over the years to Saner.ai & extract insights from them easily P/s: we have some users imported +3k notes to Saner.ai system to handle & build on their knowledge", 
+        title: "Can I import 1000+ notes to Saner.ai?", 
+    },
+    {  
+        content: "Yes, if you want to export your notes, just request to us & we give export them in markdown format for you",
+        title: "Can I export my notes from Saner.ai?", 
+    },
+    { 
+        content: "As an AI Productivity app for ADHD, you can use Saner.ai for literary everything knowledge related work: Learn new knowledge, brainstorm new idea, summarize meeting notes and also for your daily todolist",
+        title: "What use cases can I use Saner.ai for?", 
+    },
+    { 
+        content: "At Saner.AI, we use a combination of the latest AI technology and our own advanced systems to generate intelligent, accurate responses. This blend ensures you get the most relevant and up-to-date answers to your queries, all while keeping our interactions user-friendly and efficient.", 
+        title: "How does Saner.ai generate responses?",
+    },
+    { 
+        content: "Unlike traditional chat bots, Saner.ai is An one stop AI productivity app for ADHD embedded with multi AI models Saner.ai leverages foundational knowledge and your notes to deliver insightful answers. We use your note as data to train your personalized AI, giving you most relevant answers Your conversations serve as direct input for the AI's responses, eliminating the need to manually copy previous answers", 
+        title: "Why choose Saner.ai over other AI chatbots?",
+    },
+    
+]
 
 ---
 
-<div class="w-full flex justify-center items-center">
-    <div class=" w-[80%] border-[1px] border-black border-opacity-35 flex flex-col justify-center items-center md:p-16 lg:p-16 p-4 rounded-3xl mb-10">
-        <div class="bg-voilet-bg flex justify-center items-center gap-1 p-4 rounded-lg w-fit">
-            <p class="text-blue-text font-sans font-extrabold text-[12px] tracking-wider">FAQ</p>
-            <p class="text-[6px]">⏺</p>
-            <p class="text-voilet-text font-sans font-bold text-[12px] tracking-wide" >Help Center</p>
+<section class="">
+    <ContainerSmall>
+        <div class="flex flex-col gap-12 rounded-3xl border border-gray-100 p-16">
+            <HeadingTwo5XlSemibold>{ data.title }</HeadingTwo5XlSemibold>
+            <AccordionComponent 
+                client:load
+                accordionData={ accordionData }
+            />
         </div>
-        <div class=" my-5" >
-            <HeadingTwo>
-                Have a question?
-            </HeadingTwo>
-        </div>
-
-         <Questions faq_data={ faq_data } client:load />
-    </div>
-</div>
+    </ContainerSmall>
+</section>
