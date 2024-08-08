@@ -1,18 +1,30 @@
 ---
 
+// IMPORT ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
 // IMPORT ASTRO ATOMS
-import HeadingTwo from "@/atoms/akash/heading/two/index.astro"
+import HeadingTwo5xlSemiboldCenter from "@/atoms/akash/heading/two/5xl/semibold/center/index.astro"
+import Youtubevideo from "@/atoms/atoms-nandini/videos/youtube-video/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    title:"See Saner.ai in action",
+
+}
 
 ---
 
-<div class="flex flex-col gap-6 justify-center items-center p-10 w-full">
-    <HeadingTwo>See Saner.ai in action</HeadingTwo>
-    <iframe class=" aspect-[16/9] w-[90%]  rounded-2xl" 
-        src="https://www.youtube.com/embed/ijv0a93RsY8?si=ifJmSEisYowRKpI6" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-    </iframe>
-</div>
+<section>
+    <Container>
+        <div class="space-y-6 p-10 w-full">
+            <HeadingTwo5xlSemiboldCenter>{ data.title }</HeadingTwo5xlSemiboldCenter>
+            <div class="flex justify-center items-center">
+                <Youtubevideo
+                    source = "https://www.youtube.com/embed/ijv0a93RsY8?si=ifJmSEisYowRKpI6" 
+                />
+            </div>
+        </div>
+    </Container>
+</section>
