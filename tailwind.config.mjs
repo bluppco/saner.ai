@@ -46,6 +46,10 @@ module.exports = {
 				"voilet-bg": "#EADFEC",
 				"voilet-text": "#A571B5",
 				"blue-text": "#8D027C",
+        "primary": "#343C57",
+        "secondary": "#FE890F",
+        "bg": "#FEFDFC",
+        "accent": "#FEBEAC",
 			},
 			fontFamily: {
 				poppins: ["Poppins", "sans-serif"],

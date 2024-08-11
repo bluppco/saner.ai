@@ -1,0 +1,49 @@
+---
+
+// IMPORTS ATOMS
+import Heading5 from '@/atoms-diksha/headings/five/index.astro';
+import Paragraph from '@/atoms-diksha/paragraphs/large/index.astro';
+import Picture from '@/atoms-diksha/picture/index.astro';
+
+---
+<section class="bg-[url(https://res.cloudinary.com/dhq9xe2ha/image/upload/v1715153831/landing_page_1_duwbjo.png)] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center gap-6 py-16 sm:py-0">
+	<!-- fix bg image position -->
+	<div class="flex justify-center items-center gap-4 w-screen">
+		<a href="$">
+		<Picture image="https://saner.ai/wp-content/uploads/2024/03/daily1.webp" /></a>
+			<a href="$">
+		<Picture image="https://saner.ai/wp-content/uploads/2024/03/product-of-the-week.webp" /></a>
+	</div>
+	<div class="hidden sm:flex justify-center">
+		<Heading5>Stay on top of work and life with peace of mind</Heading5>
+	</div>
+	<div class="mx-40">
+		<h1
+			class="font-poppins font-bold text-4xl sm:text-7xl text-[#40403F] text-center leading-normal sm:leading-[1.3]">
+			One-stop ADHD-friendly AI Productivity app
+		</h1>
+	</div>
+	<div class="sm:mx-32 mx-40">
+		<Paragraph>
+			Easily note, recall, create insights, and get things done with a
+			simple-design note & to-do list app, using best-in-class AI
+			Assistants
+		</Paragraph>
+	</div>
+	<div class="flex flex-col items-center justify-center gap-1 py-4 sm:py-8">
+		<button
+			class="flex gap-2 px-2 py-1 sm:px-4 sm:py-2 rounded-xl sm:rounded-lg bg-color-primary text-white text-base sm:text-lg font-poppins hover:bg-cyan-500 hover:text-color-primary transition ease-in-out"
+			><i class="material-symbols-outlined">bolt</i> Get Started for Free</button
+		>
+		<p class="font-poppins font-thin text-sm sm:text-base text-slate-500">
+			No CC required
+		</p>
+	</div>
+</section>
+<section>
+	<img
+		src="https://res.cloudinary.com/dhq9xe2ha/image/upload/v1715156871/landing_page_2_finalz_cbwzgx.png"
+		alt=""
+		class="w-screen"
+	/>
+</section>

@@ -1,13 +1,9 @@
 ---
-
 // IMPORTS JSX COMPONENTS
-import BenchmarkingJSX from "@/components/benchmarking/jsx/index.jsx"
+import BenchmarkingJSX from '@/components/benchmarking/jsx/index.jsx';
 
 // GET ASTRO PROPS
-const { data } = Astro.props
-
+const { data } = Astro.props;
 ---
-<BenchmarkingJSX
-    client:load
-    data={ data }
-/>
+
+<BenchmarkingJSX client:load data={data} />
