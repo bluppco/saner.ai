@@ -1,10 +1,79 @@
 ---
-// IMPORTS ASTRO LAYOUTS
-import Container from '@/layouts/container/index.astro';
----
 
-<footer class="bg-black py-20">
-	<Container>
-		<p class="text-white">I am footer</p>
-	</Container>
+// IMPORT ASTRO COLLECTION
+import { getCollection } from 'astro:content'
+
+// IMPORT FOOTER COLUMN ONE COLLECTION
+let footer_column_one = await getCollection('footer-column-one')
+footer_column_one = footer_column_one.sort( ( a, b ) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
+
+// IMPORT FOOTER COLUMN TWO COLLECTION
+let footer_column_two = await getCollection('footer-column-two')
+footer_column_two = footer_column_two.sort( ( a, b ) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
+
+// IMPORT FOOTER COLUMN THREE COLLECTION
+let footer_column_three = await getCollection('footer-column-three')
+footer_column_three = footer_column_three.sort( ( a, b ) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
+
+// IMPORT FOOTER COLUMN FOUR COLLECTION
+let footer_column_four = await getCollection('footer-column-four')
+footer_column_four = footer_column_four.sort( ( a, b ) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
+
+// IMPORT FOOTER COLUMN FIVE COLLECTION
+let footer_column_five = await getCollection('footer-column-five')
+footer_column_five = footer_column_five.sort( ( a, b ) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
+
+// IMPORT ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORT ASTRO COMPONENTS
+import FooterColumn from "@/components/common/footer/columns/index.astro"
+
+// IMPORT DATA FROM FRONT-MATTER
+import { frontmatter as company } from "@/content/footer-column-title/company.md"
+import { frontmatter as comparison } from "@/content/footer-column-title/comparison.md"
+import { frontmatter as contact } from "@/content/footer-column-title/contact.md"
+import { frontmatter as resources } from "@/content/footer-column-title/resources.md"
+import { frontmatter as usecases } from "@/content/footer-column-title/use-cases.md"
+
+---
+<footer class="bg-black py-20 px-10">
+    <Container>
+        <div class="lg:flex lg:justify-center space-y-8 lg:space-y-0">
+            <div class="flex gap-32 sm:gap-80 md:gap-96 md:mx-10 lg:gap-14 lg:mx-0">        
+                <FooterColumn
+                    data={ footer_column_one }
+                    title={ company.title }
+                />
+                <FooterColumn
+                    data={ footer_column_two }
+                    title={ usecases.title }
+                />
+            </div>
+            <div class="md:flex md:gap-60 md:mx-10 lg:gap-16">
+                <FooterColumn
+                    data={ footer_column_three }
+                    title={ comparison.title }
+                />
+                <div class="hidden md:block">
+                    <FooterColumn
+                        data={ footer_column_four }
+                        title={ resources.title }
+                    />
+                </div>    
+            </div>
+            <div class="flex gap-24 sm:gap-64 md:mx-10 lg:mx-6">
+                <div class="md:hidden">
+                    <FooterColumn
+                        data={ footer_column_four }
+                        title={ resources.title }
+                    />
+                </div>
+                <FooterColumn
+                    data={ footer_column_five }
+                    title={ contact.title }
+                />  
+            </div>
+        </div>
+    </Container>
 </footer>
