@@ -1,49 +1,69 @@
 ---
 
 // IMPORTS ATOMS
-import Heading5 from '@/atoms-diksha/headings/five/index.astro';
-import Paragraph from '@/atoms-diksha/paragraphs/large/index.astro';
-import Picture from '@/atoms-diksha/picture/index.astro';
+import ButtonGray from "@/atoms/atoms-nandini/buttons/gray/index.astro"
+import HeadingOne7xlBoldCenterGray from "@/atoms/atoms-nandini/headings/one/7xl/bold/center/gray/index.astro"
+import Link from "@/atoms/links/index.astro"
+import ParagraphBaseThinItalicSlate from "@/atoms/atoms-nandini/paragraphs/base/thin/italic/slate/index.astro"
+import Paragraph2xlCenterSlate from '@/atoms-diksha/paragraphs/2xl/center/slate/index.astro';
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+	button_link:"/sign-up",
+	button_text:"Get Started for Free",
+	description:"No learning curve or CC required",
+	source1:"https://saner.ai/wp-content/uploads/2024/03/daily1.webp",
+	source2:"https://saner.ai/wp-content/uploads/2024/03/product-of-the-week.webp",
+	source3:"https://res.cloudinary.com/dhq9xe2ha/image/upload/v1715156871/landing_page_2_finalz_cbwzgx.png",
+	sub_title:"Drowning in information? Forgetting stuff? Our intuitive app, with AI grounded in your knowledge, simplifies your life by consolidating notes, searches, and to-dos into one place.",
+	title:"ADHD-friendly AI Note app"
+
+}
 
 ---
 <section class="bg-[url(https://res.cloudinary.com/dhq9xe2ha/image/upload/v1715153831/landing_page_1_duwbjo.png)] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center gap-6 py-16 sm:py-0">
-	<!-- fix bg image position -->
 	<div class="flex justify-center items-center gap-4 w-screen">
-		<a href="$">
-		<Picture image="https://saner.ai/wp-content/uploads/2024/03/daily1.webp" /></a>
-			<a href="$">
-		<Picture image="https://saner.ai/wp-content/uploads/2024/03/product-of-the-week.webp" /></a>
-	</div>
-	<div class="hidden sm:flex justify-center">
-		<Heading5>Stay on top of work and life with peace of mind</Heading5>
+		<Link aria_label="link-to-sign-up-button" href="/saner-ai#saner-ai-1">
+			<div class="w-40 aspect-[7/2]">
+				<PictureInternal
+					alternative_text={ data.title }
+					source={ data.source1 }
+				/>
+			</div>
+		</Link>
+		<Link aria_label="link-to-sign-up-button" href="/launches">
+			<div class="w-40 aspect-[7/3]">
+				<PictureInternal
+					alternative_text={ data.title }
+					source={ data.source2 }
+				/>
+			</div>
+		</Link>
 	</div>
 	<div class="mx-40">
-		<h1
-			class="font-poppins font-bold text-4xl sm:text-7xl text-[#40403F] text-center leading-normal sm:leading-[1.3]">
-			One-stop ADHD-friendly AI Productivity app
-		</h1>
+		<HeadingOne7xlBoldCenterGray>{ data.title }</HeadingOne7xlBoldCenterGray>
 	</div>
 	<div class="sm:mx-32 mx-40">
-		<Paragraph>
-			Easily note, recall, create insights, and get things done with a
-			simple-design note & to-do list app, using best-in-class AI
-			Assistants
-		</Paragraph>
+		<Paragraph2xlCenterSlate>{ data.sub_title }</Paragraph2xlCenterSlate>
 	</div>
 	<div class="flex flex-col items-center justify-center gap-1 py-4 sm:py-8">
-		<button
-			class="flex gap-2 px-2 py-1 sm:px-4 sm:py-2 rounded-xl sm:rounded-lg bg-color-primary text-white text-base sm:text-lg font-poppins hover:bg-cyan-500 hover:text-color-primary transition ease-in-out"
-			><i class="material-symbols-outlined">bolt</i> Get Started for Free</button
-		>
-		<p class="font-poppins font-thin text-sm sm:text-base text-slate-500">
-			No CC required
-		</p>
+		<Link aria_label={ data.button_text } href={ data.button_link }>
+			<ButtonGray>
+				<svg enable-background="new 0 0 500 500" height="15px" id="Layer_1" version="1.1" viewBox="0 0 500 500" width="15px" style="fill:currentColor"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path clip-rule="evenodd" d="M276.253,195.487L312.781,55.39  c0.542-1.721,0.817-3.55,0.817-5.448c0-9.902-7.993-17.993-17.905-17.993c-5.624,0-10.629,2.544-13.896,6.637L99.451,275.072  c-2.449,3.088-3.902,7-3.902,11.269c0,9.991,8.178,18.172,18.17,18.172h110.018l-36.518,140.097c-0.55,1.731-0.818,3.55-0.818,5.448  c0,9.912,7.996,17.993,17.897,17.993c5.634,0,10.629-2.536,13.902-6.637l182.338-236.488c2.457-3.087,3.913-6.991,3.913-11.268  c0-9.99-8.182-18.171-18.168-18.171H276.253z" fill-rule="evenodd"/>
+				</svg>
+				{ data.button_text }
+			</ButtonGray>
+		</Link>
+		<ParagraphBaseThinItalicSlate>{ data.description }</ParagraphBaseThinItalicSlate>
 	</div>
 </section>
-<section>
-	<img
-		src="https://res.cloudinary.com/dhq9xe2ha/image/upload/v1715156871/landing_page_2_finalz_cbwzgx.png"
-		alt=""
-		class="w-screen"
-	/>
-</section>
+<div>
+	<div class="w-screen aspect-video">
+		<PictureInternal
+			alternative_text={ data.title }
+			source={ data.source3 }
+		/>
+	</div>
+</div>
