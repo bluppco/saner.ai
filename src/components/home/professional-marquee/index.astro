@@ -1,33 +1,74 @@
 ---
 
 // IMPORTS ATOMS
-import Heading4 from '@/atoms-diksha/headings/four/index.astro';
-import Heading5 from '@/atoms-diksha/headings/five/index.astro';
+import HeadingFourMediumCenter from '@/atoms-diksha/headings/four/medium/center/index.astro';
+import ParagraphPoppins from "@/atoms/atoms-nandini/paragraphs/poppins/index.astro"
 
 const profession = [
-	'Researchers',
-	'Managers',
-	'Content creators',
-	'Entrepreneurs',
-	'ADHD Coach',
+    {
+        description:"Researchers"
+    },
+    {
+        description:"Managers"
+    },
+    {
+        description:"Content creators"
+    },
+    {
+        description:"Entrepreneurs"
+    },
+    {
+        description:"ADHD Coach"
+    },
 ];
+
+
+// HARDCODED DATA
+const data = {
+
+    title:"+8000 top professionals uses Saner.ai What about you?",
+}
 
 ---
 
 <section class="py-40">
-	<div class="flex flex-col sm:flex-row justify-around items-center gap-20 sm:gap-0">
-		<Heading4>+7000 top professionals moved to Saner.ai<br />What about you?</Heading4>
+	<div class="space-y-20 lg:flex lg:gap-20 lg:justify-center lg:items-center lg:mx-20 xl:mx-40 2xl:mx-80">
+        <div class="mx-80 lg:mx-5 lg:mt-10">
+            <HeadingFourMediumCenter>{ data.title }</HeadingFourMediumCenter>
+        </div>
+		<div class="flex gap-40 overflow-hidden relative w-full">
+			<div class="flex items-center gap-40 animate-scroll">
+				{
 
-		<div class="overflow-hidden whitespace-nowrap relative w-full sm:w-2/5">
-			<div class="flex items-center gap-40 sm:gap-10 animate-scroll">
-				{
-					profession.map((item) => (<h6 class="font-poppins ">{item}</h6>))
-				}
-				<!-- Repeat the list to ensure continuous scrolling -->
-				{
-					profession.map((item) => (<h6 class="font-poppins ">{item}</h6>))
-				}
+                    profession.map( (item) =>{
+
+                        return (
+
+                                <ParagraphPoppins>{ item.description }</ParagraphPoppins>
+
+                        )
+
+                    })
+
+                }
 			</div>
+            <div class="inline-block">
+                <div class="flex items-center gap-40 animate-scroll">
+                    {
+
+                        profession.map( (item) =>{
+    
+                            return (
+    
+                                    <ParagraphPoppins>{ item.description }</ParagraphPoppins>
+    
+                            )
+    
+                        })
+    
+                    }
+                </div>  
+            </div>
 		</div>
 	</div>
 </section>
