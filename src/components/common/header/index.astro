@@ -1,62 +1,109 @@
 ---
 
-// IMPORTS ATOMS
-import BorderedButton from '@/atoms-diksha/buttons/bordered/index.astro';
-import Heading3 from '@/atoms-diksha/headings/three/index.astro';
-import NavItem from '@/atoms-diksha/paragraphs/sm/index.astro';
-import SolidButton from '@/atoms-diksha/buttons/solid/index.astro';
+// IMPORT ASTRO COLLECTION
+import { getCollection } from "astro:content"
 
-const typicalUsers = [
-	'Entrepreneurs',
-	'Managers',
-	'Researchers',
-	'Content Creators',
-	'Students',
-];
+// IMPORT HEADER COLLECTION
+let header_data = await getCollection("header")
+header_data = header_data.filter(item => item.data.active).sort((a, b) => a.data.order - b.data.order)
 
-const resources = ['Introduction & guides', 'General Blogs', 'Video Academy'];
+// IMPORT MARKDOWNS
+import { frontmatter as logo_data } from "@/content/header-extra/logo.md"
+import { frontmatter as button_data } from "@/content/header-extra/button.md"
+
+const Button_link_one = button_data.button_link_one
+const Button_link_two = button_data.button_link_two
+const Button_text_one = button_data.button_text_one
+const Button_text_two = button_data.button_text_two
+const Logo_link = logo_data.link
+const Logo_title = logo_data.title
+
+// IMPORT ASTRO LAYOUTS
+import ContainerSmall from "@/layouts/container-small/index.astro"
+
+// IMPORT JSX COMPONENTS
+import HeaderMobile from "@/components/common/header/mobile/jsx"
+
+// IMPORT ASTRO ATOMS
+import ButtonOrange from "@/atoms/atoms-shiva/buttons/orange/index.astro"
+import ButtonTransparent from "@/atoms/atoms-shiva/buttons/transparent/index.astro"
+import HeadingTwo2XlBold from "@/atoms/atoms-shiva/headings/two/2xl/bold/index.astro"
+import Link from "@/atoms/links/index.astro"
+import ParagraphSmGray from "@/atoms/atoms-shiva/paragraphs/sm/gray/hover-black/index.astro"
+import ParagraphSmMedium from "@/atoms/atoms-shiva/paragraphs/sm/medium/index.astro"
+import PictureContain from "@/atoms/picture/internal/contain/index.astro"
+
 ---
 
-<header class="sticky top-0 z-10 flex justify-between items-center py-2 px-16 sm:px-8 bg-color-bg">
-	<Heading3>Saner.AI</Heading3>
-	<button class="material-symbols-outlined font-light block sm:hidden">menu</button>
-	<nav class="hidden sm:flex gap-8">
-		<NavItem>Home</NavItem>
-		<div class="flex">
-			<NavItem> Typical Users </NavItem><div class="group relative">
-				<button class="material-symbols-outlined font-light text-color-primary cursor-pointer">keyboard_arrow_down</button>
-				<div class="absolute top-10 -left-24 w-56 flex-col gap-4 bg-white rounded-b py-4 px-2 justify-around hidden group-hover:flex">
+<header class="fixed top-0 w-full bg-white py-2 z-30">
+	<ContainerSmall>
+		<nav class="hidden md:flex items-center justify-between">
+			<Link href={ Logo_link }>
+				<HeadingTwo2XlBold>{ Logo_title }</HeadingTwo2XlBold>
+				<ul class="flex items-center gap-6">
 					{
-						typicalUsers.map((user) => (
-							<a
-								href="$">
-								<span class="font-poppins text-sm font-medium whitespace-nowrap">{user}</span>
-							</a>
-						))
+
+						header_data.map( ( item ) => {
+
+							return (
+
+								<li class="flex items-center gap-2 group py-4">
+									<Link href={ item.data.link ? item.data.link : null }>
+										<ParagraphSmGray>{ item.data.title }</ParagraphSmGray>
+									</Link>
+									{
+
+										item.data.has_dropdown &&
+										<div class="size-2">
+											<PictureContain
+												alternative_text=""
+												source="/icons/down-arrow.svg"
+											/>
+										</div>
+
+
+									}
+									{
+
+										item.data.has_dropdown &&
+										<div class="absolute top-14 bg-white shadow-lg hidden group-hover:flex flex-col gap-4 p-6 min-w-56">
+											{
+
+												item.data.items.map( ( item ) => (
+
+													<Link href={ item.link }>
+														<ParagraphSmMedium>{ item.title }</ParagraphSmMedium>
+													</Link>
+
+												))
+
+											}
+										</div>
+
+									}
+								</li>
+
+							)
+
+						})
+
 					}
+				</ul>
+				<div class="flex items-center gap-4">
+					<Link href={ Button_link_one }>
+						<ButtonTransparent>{ Button_text_one }</ButtonTransparent>
+					</Link>
+					<Link href={ Button_link_two }>
+						<ButtonOrange>{ Button_text_two }</ButtonOrange>
+					</Link>
 				</div>
-			</div>
-		</div>
-		<NavItem>Pricing</NavItem>
-		<div class="flex">
-			<NavItem> Resources </NavItem>
-			<div class="group relative">
-				<button class="material-symbols-outlined font-light text-color-primary cursor-pointer">keyboard_arrow_down</button>
-				<div class="absolute top-10 -left-24 w-56 flex-col gap-4 bg-white rounded-b py-4 px-2 justify-around hidden group-hover:flex">
-					{
-						resources.map((user) => (
-							<a
-								href="$">
-								<span class="font-poppins text-sm font-medium whitespace-nowrap">{user}</span>
-							</a>
-						))
-					}
-				</div>
-			</div>
-		</div>
-	</nav>
-	<div class="sm:flex gap-1 hidden">
-		<BorderedButton>Sign in</BorderedButton>
-		<SolidButton>Sign Up</SolidButton>
-	</div>
+			</Link>
+		</nav>
+	</ContainerSmall>
+	<HeaderMobile 
+		client:load
+		header_data={ header_data }
+		logo_link={ Logo_link }
+		logo_title={ Logo_title }
+	/>
 </header>
