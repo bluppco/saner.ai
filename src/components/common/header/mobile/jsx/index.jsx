@@ -34,7 +34,7 @@ const HeaderMobile = ( { header_data, logo_link, logo_title } ) => {
 
     return (
 
-        <mobilenav className="md:hidden flex justify-center">
+        <nav className="md:hidden flex justify-center">
             <div className="relative w-full flex items-center justify-between px-4 z-30">
                 <LinkJSX href={ logo_link }>
                     <HeadingTwo2XlBoldJSX>{ logo_title }</HeadingTwo2XlBoldJSX>
@@ -84,7 +84,7 @@ const HeaderMobile = ( { header_data, logo_link, logo_title } ) => {
 
                 }
             </ul>
-        </mobilenav>
+        </nav>
 
     )
 

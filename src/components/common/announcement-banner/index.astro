@@ -1,16 +1,20 @@
-<div
-	class="hidden sm:block w-screen h-12 bg-color-primary bg-blend-normal bg-[url('https://saner.ai/wp-content/uploads/2023/04/head-bg-1.png')] bg-cover bg-center bg-no-repeat"
->
-	<div class="flex gap-6 justify-center items-center h-full">
-		<a
-			href="https://www.producthunt.com/products/saner-ai"
-		>
-			<span class="font-poppins text-[10px] font-bold text-white">ANNOUNCEMENT</span>
-		</a>
-		<a
-			href="https://www.producthunt.com/products/saner-ai"
-		>
-			<span class="font-poppins text-[10px] font-bold text-white">Saner.AI biggest update is launching NOW!</span>
-		</a>
+---
+
+// IMPORT MARKDOWNS
+import { frontmatter as announcement_data } from "@/content/header-extra/announcement.md"
+
+const announcement_title = announcement_data.title
+const announcement_subtitle = announcement_data.subtitle
+
+// IMPORT ASTOR ATOMS
+import HeadingThreeXsWhite from "@/atoms/atoms-shiva/headings/three/xs/semibold/white/index.astro"
+import ParagraphXsWhite from "@/atoms/atoms-shiva/paragraphs/xs/white/index.astro"
+
+---
+
+<section class="fixed top-0 w-full flex justify-center items-center border-b-2 border-white bg-slate-800 py-4 z-40">
+	<div class="flex items-center gap-4">
+		<HeadingThreeXsWhite>{ announcement_title }</HeadingThreeXsWhite>
+		<ParagraphXsWhite>{ announcement_subtitle }</ParagraphXsWhite>
 	</div>
-</div>
+</section>
